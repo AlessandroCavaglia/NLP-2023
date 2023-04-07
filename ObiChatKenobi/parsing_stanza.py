@@ -48,6 +48,8 @@ def extract_lemma(phrase, dictionary):
     '''
     return verbs
 
+
+
 def build_merged_tree():
     nlp = stanza.Pipeline('en')  # initialize English neural pipeline
 
