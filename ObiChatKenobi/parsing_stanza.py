@@ -27,6 +27,52 @@ def main_single_complement():
     print("Complement:", complement)
     print("Adverb:", adverb)
 
+def extract_lemma(phrase, dictionary):
+
+    verbs = []
+    visited_node = []
+    complement = None
+    adverb = []
+    for elem in phrase.sentences[0]._words:
+        if (elem.lemma in dictionary):
+            verbs.append(elem)
+    '''
+    for verb in verbs:
+        for elem in phrase.sentences[0]._words:
+            if verb.id not in visited_node :
+                visited_node.append(verb.id)
+                if (elem.head == verb.head and elem.xpos == "RB"):
+                    adverb.append(elem)
+                if (elem.id == verb.head):
+                    complement = elem
+    '''
+    return verbs
+
+def build_merged_tree():
+    nlp = stanza.Pipeline('en')  # initialize English neural pipeline
+
+    doc = nlp("I think that it be not 3 or 5, it be 1 or 2, You must make 4 and 6")  # run annotation over a sentence
+    sent = doc._sentences[0]._constituency
+    leaf_nodes = get_leaf_nodes(sent)
+
+    print(leaf_nodes)
+
+    for verb in extract_lemma(doc, ["be","make"]):
+        current_verb = verb._text
+
+        complement = None
+        for node in leaf_nodes:
+            if (node.label == current_verb):
+                verb = node
+                leaf_nodes.pop(leaf_nodes.index(node))
+                exploreNode = verb
+                while (exploreNode.label != "VP"):
+                    exploreNode = exploreNode.parent
+                complement = findComplement(exploreNode)
+                break
+
+        print(verb)
+        print(complement)
 
 def get_leaf_nodes(self):
     leafs = []
@@ -81,7 +127,7 @@ def main_multiple_complement():
 def main_tree():
     nlp = stanza.Pipeline('en')  # initialize English neural pipeline
 
-    doc = nlp("I think that it is not 3 or 5")  # run annotation over a sentence
+    doc = nlp("I think that it is not 3 or 5 or 7")  # run annotation over a sentence
 
     sent = doc._sentences[0]._constituency
 
@@ -101,4 +147,4 @@ def main_tree():
 
 
 if __name__ == "__main__":
-    main_tree()
+    build_merged_tree()
