@@ -27,8 +27,8 @@ def main_single_complement():
     print("Complement:", complement)
     print("Adverb:", adverb)
 
-def extract_lemma(phrase, dictionary):
 
+def extract_lemma(phrase, dictionary):
     verbs = []
     visited_node = []
     complement = None
@@ -49,20 +49,72 @@ def extract_lemma(phrase, dictionary):
     return verbs
 
 
+def elaborateModifier(modifiers):
+    result = None
+    for modifier in modifiers:
+        if modifier == "not" or modifier == "n't":
+            result = "!"
+    return result
+
+
+def elaborateComplement(root):
+    complements = []
+    for child in root.children:
+        if (len(child.children) == 0):
+            if (child.label == "or"):
+                complements.append("|")
+            elif (child.label == "not"):
+                complements.append("!")
+            elif (child.label == "and" or child.label == ","):
+                complements.append("&")
+            else:
+                complements.append(child.label)
+        else:
+            complements.extend(elaborateComplement(child))
+    return complements
+
+
+def mergeComplements(complements, modifier):
+    for i in range(len(complements)):
+        if (complements[i] == "!"):
+            if (complements[i + 1] == "!"):
+                complements[i + 1] = ""
+            else:
+                complements[i + 1] = "!" + complements[i + 1]
+            complements[i] = ""
+    while (complements.count("") > 0):
+        complements.remove("")
+    if (modifier == "!"):
+        for i,complement in enumerate(complements):
+            if (complement.startswith("!")):
+                complements[i] = complement[1:]
+            else:
+                if (complement == "&"):
+                    complements[i] = "|"
+                elif (complement == "|"):
+                    complements[i] = "&"
+                else:
+                    complements[i] = "!" + complement
+    return complements
+
 
 def build_merged_tree():
     nlp = stanza.Pipeline('en')  # initialize English neural pipeline
 
-    doc = nlp("I think that it be not 3 or 5, it be 1 or 2, You must make 4 and 6")  # run annotation over a sentence
+    # doc = nlp("I think that it be not 3 or 5, it be 1 or 2, You must make 4 and 6")  # run annotation over a sentence
+    doc = nlp("I think that it isn't Rome or Paris")  # run annotation over a sentence
     sent = doc._sentences[0]._constituency
     leaf_nodes = get_leaf_nodes(sent)
 
-    print(leaf_nodes)
+    # print(leaf_nodes)
 
-    for verb in extract_lemma(doc, ["be","make"]):
+    for verb in extract_lemma(doc, ["be", "make"]):
         current_verb = verb._text
 
-        complement = None
+        complementBlock = None
+        complements = None
+        modifierBlock = None
+        modifier = None
         for node in leaf_nodes:
             if (node.label == current_verb):
                 verb = node
@@ -70,11 +122,18 @@ def build_merged_tree():
                 exploreNode = verb
                 while (exploreNode.label != "VP"):
                     exploreNode = exploreNode.parent
-                complement = findComplement(exploreNode)
+                complementBlock = findComplement(exploreNode)
+                modifierBlock = findModifiers(exploreNode)
+                modifier = elaborateModifier(modifierBlock)
+                complements = mergeComplements(elaborateComplement(complementBlock), modifier)
+
                 break
 
         print(verb)
-        print(complement)
+        print(complementBlock)
+        print(complements)
+        print(modifierBlock)
+
 
 def get_leaf_nodes(self):
     leafs = []
@@ -92,16 +151,29 @@ def get_leaf_nodes(self):
 
 
 def findComplement(node):
-    foundNode=None
-    if(node.label=="NP"):
-        foundNode= node
+    foundNode = None
+    if (node.label == "NP"):
+        foundNode = node
     else:
-        index=0
-        while(index<len(node.children) and foundNode==None):
-            foundNode=findComplement(node.children[index])
-            index=index+1
+        index = 0
+        while (index < len(node.children) and foundNode == None):
+            foundNode = findComplement(node.children[index])
+            index = index + 1
 
     return foundNode
+
+
+def findModifiers(node):
+    foundNodes = []
+    if (node.label == "RB"):
+        foundNodes.append(node.children[0].label)
+    else:
+        index = 0
+        for child in node.children:
+            if (child.label == "RB"):
+                foundNodes.append(child.children[0].label)
+    return foundNodes
+
 
 def main_multiple_complement():
     nlp = stanza.Pipeline('en')  # initialize English neural pipeline
@@ -133,19 +205,20 @@ def main_tree():
 
     sent = doc._sentences[0]._constituency
 
-    verb=None
-    complement=None
+    verb = None
+    complement = None
+    modifier = None
     for node in get_leaf_nodes(sent):
-        if(node.label=="is"):
-            verb=node
-            exploreNode=verb
-            while(exploreNode.label!="VP"):
-                exploreNode=exploreNode.parent
-            complement=findComplement(exploreNode)
+        if (node.label == "is"):
+            verb = node
+            exploreNode = verb
+            while (exploreNode.label != "VP"):
+                exploreNode = exploreNode.parent
+            complement = findComplement(exploreNode)
+            modifier = findModifiers(exploreNode)
 
     print(verb)
     print(complement)
-
 
 
 if __name__ == "__main__":
