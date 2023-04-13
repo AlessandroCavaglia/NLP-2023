@@ -23,16 +23,27 @@ input_message.addEventListener('input', ()=>{
 
 })
 
+icon_audio.addEventListener('click',()=>{
 
-icon_send.addEventListener('click', ()=>{
+})
+
+const send_message = function (){
     icon_audio.classList.remove('d-none')
     icon_send.classList.add('d-none')
     chat.innerHTML = chat.innerHTML + '<div class="message parker">'+input_message.value+'<div class="timeMessage">'+getCurrentTime()+'</div></div>'
     input_message.value = ''
     setTimeout(()=>{manageMessage(1)},500)
     chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+}
 
+icon_send.addEventListener('click', send_message)
+input_message.addEventListener('keypress', (e)=>{
+     if (e.key === 'Enter' && input_message.value !== "") {
+      send_message()
+    }
 })
+
+
 
 function getCurrentTime(){
     let date = new Date(Date.now());
