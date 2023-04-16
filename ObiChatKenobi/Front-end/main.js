@@ -10,6 +10,12 @@ let icon_send = document.getElementById('icon_send')
 let icon_audio = document.getElementById('icon_audio')
 let status = document.getElementById('status')
 
+let time_message = document.querySelectorAll('.timeMessage')
+
+time_message.forEach(function (elem){
+    elem.innerHTML = getCurrentTime()
+});
+
 //Speech recognition
 const SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
 const SpeechGrammarList = window.SpeechGrammarList || webkitSpeechGrammarList;
@@ -80,7 +86,8 @@ input_message.addEventListener('keypress', (e)=>{
 
 function getCurrentTime(){
     let date = new Date(Date.now());
-    return date.getHours() +':'+ date.getMinutes();
+    let minutes = date.getMinutes() < 10 ? "0"+date.getMinutes() : date.getMinutes();
+    return date.getHours() +':'+ minutes;
 }
 
 function manageTyping(trigger){
