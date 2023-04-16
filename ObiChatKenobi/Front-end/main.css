@@ -139,8 +139,28 @@ body, html {
     color: #999 !important;
     width: fit-content;
     width: -moz-fit-content;
+    position: relative;
     width: fit-content;
     margin: 0 auto;
+}
+.stark .play_text{
+    position: absolute;
+    right: .4rem;
+    top: .4rem;
+    border-radius: 50%;
+    width: 1.3rem;
+    color: #333;
+    height: 1.3rem;
+}
+
+.parker .play_text{
+    position: absolute;
+    right: .4rem;
+    color: #EEE;
+    top: .4rem;
+    border-radius: 50%;
+    width: 1.3rem;
+    height: 1.3rem;
 }
 .chat .messages .message {
     box-sizing: border-box;
@@ -152,8 +172,12 @@ body, html {
     width: fit-content;
     width: -moz-fit-content;
     width: fit-content;
+    position: relative;
     max-width: 66%;
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.075), 0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.1);
+}
+.message span{
+    margin-right: 1rem;
 }
 .chat .messages .message.parker {
     margin: 1rem 1rem 1rem auto;

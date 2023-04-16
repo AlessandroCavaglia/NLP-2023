@@ -12,9 +12,23 @@ let status = document.getElementById('status')
 
 let time_message = document.querySelectorAll('.timeMessage')
 
+let play_message = document.querySelectorAll('.play_text')
+
 time_message.forEach(function (elem){
     elem.innerHTML = getCurrentTime()
 });
+
+function speak_message(e){
+    let text = e.parentNode.children.item(0).innerHTML
+    console.log(text)
+    if ('speechSynthesis' in window) {
+      let voices = getVoices();
+      speak(text, voices[3]);
+    }else{
+      console.log(' Speech Synthesis Not Supported');
+    }
+}
+
 
 //Speech recognition
 const SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
@@ -27,8 +41,8 @@ const speechRecognitionList = new SpeechGrammarList();
 
 recognition.grammars = speechRecognitionList;
 recognition.continuous = false;
-//recognition.lang = "en-US";
-recognition.lang = "IT-IT";
+recognition.lang = "en-US";
+//recognition.lang = "IT-IT";
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
@@ -69,7 +83,7 @@ const send_message = function (value){
     icon_audio.classList.remove('d-none')
     icon_send.classList.add('d-none')
     console.log(value)
-    chat.innerHTML = chat.innerHTML + '<div class="message parker">'+value+'<div class="timeMessage">'+getCurrentTime()+'</div></div>'
+    chat.innerHTML = chat.innerHTML + '<div class="message parker"><span>'+value+'</span><div class="timeMessage">'+getCurrentTime()+'</div><i onclick="speak_message(this)" class="play_text uil uil-play"></i></div>'
     input_message.value = ''
     setTimeout(()=>{manageMessage(1)},500)
     chat.scrollTop = chat.scrollHeight - chat.clientHeight;
@@ -82,7 +96,32 @@ input_message.addEventListener('keypress', (e)=>{
     }
 })
 
+/*Text to speech*/
+function getVoices() {
+  let voices = speechSynthesis.getVoices();
 
+  if(!voices.length){
+    let utterance = new SpeechSynthesisUtterance("");
+    speechSynthesis.speak(utterance);
+    voices = speechSynthesis.getVoices();
+  }
+  return voices;
+}
+
+function speak(text, voice, rate = 1, pitch = 2, volume = 1) {
+  // create a SpeechSynthesisUtterance to configure the how text to be spoken
+  let speakData = new SpeechSynthesisUtterance();
+  speakData.volume = volume; // From 0 to 1
+  speakData.rate = rate; // From 0.1 to 10
+  speakData.pitch = pitch; // From 0 to 2
+  speakData.text = text;
+  speakData.lang = 'en';
+  speakData.voice = voice;
+
+  // pass the SpeechSynthesisUtterance to speechSynthesis.speak to start speaking
+  speechSynthesis.speak(speakData);
+
+}
 
 function getCurrentTime(){
     let date = new Date(Date.now());
@@ -111,11 +150,10 @@ function manageMessage(trigger = 0){
     setTimeout(()=>{
         if(isTyping === 1){
             manageTyping(0)
-            chat.innerHTML = chat.innerHTML + '<div class="message stark"> Hola <div class="timeMessage">'+getCurrentTime()+'</div>'
+            chat.innerHTML = chat.innerHTML + '<div class="message stark"><span> coia </span><div class="timeMessage">'+getCurrentTime()+'</div><i onclick="speak_message(this)" class="play_text uil uil-play"></i></div>'
             chat.scrollTop = chat.scrollHeight - chat.clientHeight;
         }
         isTyping--
     }, 1000)
 
 }
-
