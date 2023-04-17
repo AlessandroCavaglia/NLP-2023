@@ -111,7 +111,7 @@ def get_leaf_nodes(self):
     def _get_leaf_nodes(node, parent):
         if node is not None:
             node.parent = parent
-            if node.label=="VP":
+            if node.label=="VP" or node.label=="VBZ" or node.label=="VB":
                 verbs.append(0)
             if len(node.children) == 0:
                 leafs.append(node)
@@ -202,12 +202,13 @@ def understand_answer_no_verb(sentence):
 
 
 def understand_answer(phrase, suggested_verbs):
-    nlp = stanza.Pipeline('en')  # initialize English neural pipeline
+    nlp = stanza.Pipeline('en',  processors='tokenize,sentiment,mwt,pos,lemma,depparse,ner,constituency')  # initialize English neural pipeline
     # doc = nlp("I think that it be not 3 or 5, it be 1 or 2, You must make 4 and 6")  # run annotation over a sentence
     doc = nlp(preProcess(phrase))  # run annotation over a sentence
     sent = doc._sentences[0]._constituency
     (leaf_nodes,verb_count) = get_leaf_nodes(sent) #While we explore the tree we estimate how many verbs are there
-
+    print("cont verb",verb_count)
+    print("sentimant",doc.sentences[0].sentiment)
     complements = []
     modifiers = []
     verbsFinal = []
@@ -228,7 +229,7 @@ def understand_answer(phrase, suggested_verbs):
                         verb = node
                         leaf_nodes.pop(leaf_nodes.index(node))
                         exploreNode = verb
-                        while (exploreNode.label != "VP"):
+                        while (exploreNode.label != "VP" and node.label!="VBZ" and node.label!="VB"):
                             exploreNode = exploreNode.parent
                         complementBlock = findComplement(exploreNode)
                         modifierBlock = findModifiers(exploreNode)
@@ -240,25 +241,27 @@ def understand_answer(phrase, suggested_verbs):
                         local_complements = mergeComplements(local_complements, local_modifiers)
                         verbsFinal.append(verb)
                         break
-                except:
+                except Exception as e:
                     local_modifiers = [None]
                     local_complements = [None]
                     print("Error")
+                    print(e)
 
-        print(local_complements)
+        #print(local_complements)
         complements.append(local_complements)
-        print(local_modifiers)
+        #print(local_modifiers)
         modifiers.append(local_modifiers)
 
-    print(verbsFinal)
-    print(complements)
-    print(modifiers)
+    print("verbsFinal",verbsFinal)
+    print("complements",complements)
+    print("modifiers",modifiers)
 
 
 if __name__ == "__main__":
     #understand_answer("Yes he isn't", ["be","can","can't"])
 
-    questions = ["How old are you?","In which country does Rome reside?","Can a priest get married?"]
+    #questions = ["How old are you?","In which country does Rome reside?","Can a priest get married?"]
+    questions = ["Can a priest get married?"]
     for quest in questions:
         print(quest)
         ans=input()
