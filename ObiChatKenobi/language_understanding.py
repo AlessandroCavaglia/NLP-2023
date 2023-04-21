@@ -3,9 +3,14 @@ import stanza
 
 # http://nlpviz.bpodgursky.com/
 # https://cs.nyu.edu/~grishman/jet/guide/PennPOS.html
+nlp = stanza.Pipeline('en',
+                      processors='tokenize,sentiment,mwt,pos,lemma,depparse,ner,constituency')  # initialize English neural pipeline
+
 
 def preProcess(phrase):
     phrase = phrase.capitalize()
+    while "can't" in phrase:
+        phrase = phrase.replace("can't","can not")
     return phrase
 
 
@@ -156,12 +161,12 @@ def findModifiers(node):
     if (hasattr(node, "parent") and node.parent != None):
         if (node.parent.label == "VP"):
             foundNodes = findModifiers(node.parent)
-    if (node.label == "RB" or node.label == "MD" or node.label == "ADVP"):
+    if (node.label == "RB" or node.label == "RBR" or node.label == "RBS" or node.label == "ADVP"):
         child = node.children[0]
         foundNodes.append(child.label)
     else:
         for child in node.children:
-            if (child.label == "RB" or child.label == "MD" or node.label == "ADVP"):
+            if (child.label == "RB" or node.label == "RBR" or node.label == "RBS" or node.label == "ADVP"):
                 foundNodes.append(child.children[0].label)
     return foundNodes
 
@@ -185,7 +190,7 @@ def understand_answer_no_verb(sentence):
     modifierBlock = None
     local_modifiers = None
     local_complements = None
-    print(sentence)
+    #print(sentence)
     while (sentence.label == "ROOT"):
         sentence = sentence.children[0]
     complementBlock = findComplement_no_verb(sentence)
@@ -202,7 +207,6 @@ def understand_answer_no_verb(sentence):
 
 
 def understand_answer(phrase, suggested_verbs):
-    nlp = stanza.Pipeline('en',  processors='tokenize,sentiment,mwt,pos,lemma,depparse,ner,constituency')  # initialize English neural pipeline
     # doc = nlp("I think that it be not 3 or 5, it be 1 or 2, You must make 4 and 6")  # run annotation over a sentence
     doc = nlp(preProcess(phrase))  # run annotation over a sentence
     sent = doc._sentences[0]._constituency
@@ -253,17 +257,21 @@ def understand_answer(phrase, suggested_verbs):
         modifiers.append(local_modifiers)
 
     print("verbsFinal",verbsFinal)
-    print("complements",complements)
-    print("modifiers",modifiers)
+    print("complements final",complements)
+    print("modifiers final",modifiers)
 
 
 if __name__ == "__main__":
     #understand_answer("Yes he isn't", ["be","can","can't"])
 
-    #questions = ["How old are you?","In which country does Rome reside?","Can a priest get married?"]
-    questions = ["Can a priest get married?"]
-    for quest in questions:
-        print(quest)
-        ans=input()
-        understand_answer(ans,["be","reside","can","can't"])
+    questions = ["How old are you?","In which country does Rome reside?","Can a priest get married?"]
+    #questions = ["Can a priest get married?"]
+    replay="yes"
+    while replay == "yes":
+        for quest in questions:
+            print(quest)
+            ans=input()
+            understand_answer(ans,["be","reside","can","can't"])
+        print("Do you wanna continue?")
+        replay = input()
 #Not in the Christian religon
