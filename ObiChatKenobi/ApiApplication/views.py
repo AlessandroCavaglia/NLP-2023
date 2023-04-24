@@ -6,4 +6,4 @@ from rest_framework.response import Response
 # Create your views here.
 class BotApiView(APIView):
     def get(self, request):
-        return Response({"Message": 1})
+        return Response({"Message": "Ciao a tutti"})

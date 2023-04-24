@@ -144,21 +144,21 @@ function manageTyping(trigger) {
 }
 
 function manageMessage(trigger = 0) {
-fetch('http://127.0.0.1:8000/test/?format=json', {
-                method: 'GET',
-                mode: 'no-cors',
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => console.log(response))
+
     manageTyping(trigger)
     isTyping++
     setTimeout(() => {
         if (isTyping === 1) {
             manageTyping(0)
+            fetch('http://127.0.0.1:8000/test/', {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => response.json())
+                .then(response => chat.innerHTML = chat.innerHTML + '<div class="message stark"><span>' + JSON.stringify(response["Message"]) + '</span><div class="timeMessage">' + getCurrentTime() + '</div><i onclick="speak_message(this)" class="play_text uil uil-play"></i></div>')
+                .then(response => chat.scrollTop = chat.scrollHeight - chat.clientHeight)
 
-            chat.innerHTML = chat.innerHTML + '<div class="message stark"><span> coia </span><div class="timeMessage">' + getCurrentTime() + '</div><i onclick="speak_message(this)" class="play_text uil uil-play"></i></div>'
-            chat.scrollTop = chat.scrollHeight - chat.clientHeight;
         }
         isTyping--
     }, 1000)
