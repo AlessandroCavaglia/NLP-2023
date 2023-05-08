@@ -14,18 +14,18 @@ let time_message = document.querySelectorAll('.timeMessage')
 
 let play_message = document.querySelectorAll('.play_text')
 
-time_message.forEach(function (elem){
+time_message.forEach(function (elem) {
     elem.innerHTML = getCurrentTime()
 });
 
-function speak_message(e){
+function speak_message(e) {
     let text = e.parentNode.children.item(0).innerHTML
     console.log(text)
     if ('speechSynthesis' in window) {
-      let voices = getVoices();
-      speak(text, voices[3]);
-    }else{
-      console.log(' Speech Synthesis Not Supported');
+        let voices = getVoices();
+        speak(text, voices[3]);
+    } else {
+        console.log(' Speech Synthesis Not Supported');
     }
 }
 
@@ -47,13 +47,11 @@ recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
 
-
-input_message.addEventListener('input', ()=>{
-    if(input_message.value !== ""){
+input_message.addEventListener('input', () => {
+    if (input_message.value !== "") {
         icon_send.classList.remove('d-none')
         icon_audio.classList.add('d-none')
-    }
-    else{
+    } else {
         icon_audio.classList.remove('d-none')
         icon_send.classList.add('d-none')
     }
@@ -61,97 +59,106 @@ input_message.addEventListener('input', ()=>{
 
 })
 
-icon_audio.addEventListener('click',()=>{
-  recognition.start();
-  icon_audio.style.color = "red";
+icon_audio.addEventListener('click', () => {
+    recognition.start();
+    icon_audio.style.color = "red";
 })
 
 recognition.onresult = (event) => {
-  const response = event.results[0][0].transcript;
-  send_message(response)
-  icon_audio.style.color = '#999';
+    const response = event.results[0][0].transcript;
+    send_message(response)
+    icon_audio.style.color = '#999';
 };
 
 recognition.onerror = (event) => {
-  console.log(`Error occurred in recognition: ${event.error}`);
+    console.log(`Error occurred in recognition: ${event.error}`);
 };
 
 
-const send_message = function (value){
-    if(typeof value === 'object')
+const send_message = function (value) {
+    if (typeof value === 'object')
         value = input_message.value;
     icon_audio.classList.remove('d-none')
     icon_send.classList.add('d-none')
     console.log(value)
-    chat.innerHTML = chat.innerHTML + '<div class="message parker"><span>'+value+'</span><div class="timeMessage">'+getCurrentTime()+'</div><i onclick="speak_message(this)" class="play_text uil uil-play"></i></div>'
+    chat.innerHTML = chat.innerHTML + '<div class="message parker"><span>' + value + '</span><div class="timeMessage">' + getCurrentTime() + '</div><i onclick="speak_message(this)" class="play_text uil uil-play"></i></div>'
     input_message.value = ''
-    setTimeout(()=>{manageMessage(1)},500)
+    setTimeout(() => {
+        manageMessage(1)
+    }, 500)
     chat.scrollTop = chat.scrollHeight - chat.clientHeight;
 }
 
 icon_send.addEventListener('click', send_message)
-input_message.addEventListener('keypress', (e)=>{
-     if (e.key === 'Enter' && input_message.value !== "") {
-      send_message(input_message.value)
+input_message.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && input_message.value !== "") {
+        send_message(input_message.value)
     }
 })
 
 /*Text to speech*/
 function getVoices() {
-  let voices = speechSynthesis.getVoices();
+    let voices = speechSynthesis.getVoices();
 
-  if(!voices.length){
-    let utterance = new SpeechSynthesisUtterance("");
-    speechSynthesis.speak(utterance);
-    voices = speechSynthesis.getVoices();
-  }
-  return voices;
+    if (!voices.length) {
+        let utterance = new SpeechSynthesisUtterance("");
+        speechSynthesis.speak(utterance);
+        voices = speechSynthesis.getVoices();
+    }
+    return voices;
 }
 
 function speak(text, voice, rate = 1, pitch = 2, volume = 1) {
-  // create a SpeechSynthesisUtterance to configure the how text to be spoken
-  let speakData = new SpeechSynthesisUtterance();
-  speakData.volume = volume; // From 0 to 1
-  speakData.rate = rate; // From 0.1 to 10
-  speakData.pitch = pitch; // From 0 to 2
-  speakData.text = text;
-  speakData.lang = 'en';
-  speakData.voice = voice;
+    // create a SpeechSynthesisUtterance to configure the how text to be spoken
+    let speakData = new SpeechSynthesisUtterance();
+    speakData.volume = volume; // From 0 to 1
+    speakData.rate = rate; // From 0.1 to 10
+    speakData.pitch = pitch; // From 0 to 2
+    speakData.text = text;
+    speakData.lang = 'en';
+    speakData.voice = voice;
 
-  // pass the SpeechSynthesisUtterance to speechSynthesis.speak to start speaking
-  speechSynthesis.speak(speakData);
+    // pass the SpeechSynthesisUtterance to speechSynthesis.speak to start speaking
+    speechSynthesis.speak(speakData);
 
 }
 
-function getCurrentTime(){
+function getCurrentTime() {
     let date = new Date(Date.now());
-    let minutes = date.getMinutes() < 10 ? "0"+date.getMinutes() : date.getMinutes();
-    return date.getHours() +':'+ minutes;
+    let minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+    return date.getHours() + ':' + minutes;
 }
 
-function manageTyping(trigger){
+function manageTyping(trigger) {
     let message_typing = document.getElementById('typing')
-    if(message_typing !== null){
+    if (message_typing !== null) {
         message_typing.remove()
         status.innerHTML = 'Online'
 
     }
-    if(trigger === 1){
+    if (trigger === 1) {
         chat.innerHTML = chat.innerHTML + typing
         status.innerHTML = 'Typing...'
         chat.scrollTop = chat.scrollHeight - chat.clientHeight;
     }
 }
 
-function manageMessage(trigger = 0){
+function manageMessage(trigger = 0) {
 
     manageTyping(trigger)
     isTyping++
-    setTimeout(()=>{
-        if(isTyping === 1){
+    setTimeout(() => {
+        if (isTyping === 1) {
             manageTyping(0)
-            chat.innerHTML = chat.innerHTML + '<div class="message stark"><span> coia </span><div class="timeMessage">'+getCurrentTime()+'</div><i onclick="speak_message(this)" class="play_text uil uil-play"></i></div>'
-            chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+            fetch('http://127.0.0.1:8000/test/', {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => response.json())
+                .then(response => chat.innerHTML = chat.innerHTML + '<div class="message stark"><span>' + JSON.stringify(response["Message"]) + '</span><div class="timeMessage">' + getCurrentTime() + '</div><i onclick="speak_message(this)" class="play_text uil uil-play"></i></div>')
+                .then(response => chat.scrollTop = chat.scrollHeight - chat.clientHeight)
+
         }
         isTyping--
     }, 1000)
