@@ -18,7 +18,9 @@ from django.contrib import admin
 from django.urls import path
 from ApiApplication import views
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/', views.BotApiView.as_view()),
+    path('getMsg/', views.BotApiView.as_view()),
 ]

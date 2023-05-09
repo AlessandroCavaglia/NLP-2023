@@ -1,5 +1,5 @@
-from ObiChatKenobi.dialogueManager import DialogueManager
-from ObiChatKenobi.language_understanding import LanguageUnderstanding
+from ObiChatKenobi.ApiApplication.dialogueManager import DialogueManager
+from ObiChatKenobi.ApiApplication.language_understanding import LanguageUnderstanding
 
 if __name__ == "__main__":
     understanding=LanguageUnderstanding()
@@ -8,5 +8,5 @@ if __name__ == "__main__":
         systemDialogueAct=dialogueManager.getQuestion()
         print(systemDialogueAct.phrase)
         speechRecognitionHypotesis = input()
-        userDialogueAct=understanding.understand_answer(speechRecognitionHypotesis,question.answerVerbs)
+        userDialogueAct=understanding.understand_answer(speechRecognitionHypotesis,systemDialogueAct.answerVerbs)
         dialogueManager.answerQuestion(userDialogueAct)

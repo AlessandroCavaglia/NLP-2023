@@ -22,7 +22,7 @@ class DialogueManager:
         self.questionsToAsk.append(Question(["can a priest get married?"], ["be", "can"], ["no", "not"],["he absolutely can't, let's go on and try with another question: "]))
 
 
-        self.welcomAntePhrases.append("Welcome young padawan! Thrilled to become a jedi? This if your first question to check if you are good: ")
+        self.welcomAntePhrases.append("Welcome young student! Thrilled to become a jedi? This if your first question to check if you are good: ")
         self.welcomAntePhrases.append("Hello there! Are you ready to become a jedi? Let's see if you have studied enough: ")
 
         self.correctAntePhrases.append("Good answer! let's keep going, next question: ")
@@ -33,7 +33,7 @@ class DialogueManager:
 
 
     def getQuestion(self):
-        if(self.dialogueAction[len(self.dialogueAction)-1][0]=="START"):    #It means we are starting the conversation
+        if(self.dialogueAction[len(self.dialogueAction)-1][1]=="START"):    #It means we are starting the conversation
             self.askedQuestion = random.choice(self.questionsToAsk)
             self.questionsToAsk.remove(self.askedQuestion)
             self.askedQuestion.phrase = random.choice(self.welcomAntePhrases) + random.choice(self.askedQuestion.phrases)
@@ -50,7 +50,7 @@ class DialogueManager:
                 self.askedQuestion.phrases)
 
         elif (self.dialogueAction[len(self.dialogueAction) - 1][1] == "UNK"):
-            self.askedQuestion.phrase = random.choice(self.incorrectAntePhrases)+ random.choice(
+            self.askedQuestion.phrase = random.choice(self.unknownAntePhrases)+ random.choice(
                 self.askedQuestion.phrases)
 
 
