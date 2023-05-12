@@ -9,4 +9,5 @@ if __name__ == "__main__":
         print(systemDialogueAct.phrase)
         speechRecognitionHypotesis = input()
         userDialogueAct=understanding.understand_answer(speechRecognitionHypotesis,systemDialogueAct.answerVerbs)
+
         dialogueManager.answerQuestion(userDialogueAct)
