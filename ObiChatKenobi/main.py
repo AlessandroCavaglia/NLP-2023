@@ -4,7 +4,7 @@ from ObiChatKenobi.ApiApplication.language_understanding import LanguageUndersta
 if __name__ == "__main__":
     understanding=LanguageUnderstanding()
     dialogueManager=DialogueManager()
-    while(len(dialogueManager.questionsToAsk)>0):
+    while(True):
         systemDialogueAct=dialogueManager.getQuestion()
         print(systemDialogueAct.phrase)
         speechRecognitionHypotesis = input()

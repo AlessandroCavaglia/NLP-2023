@@ -84,7 +84,7 @@ const send_message = function (value) {
     chat.innerHTML = chat.innerHTML + '<div class="message parker"><span>' + value + '</span><div class="timeMessage">' + getCurrentTime() + '</div><i onclick="speak_message(this)" class="play_text uil uil-play"></i></div>'
     input_message.value = ''
     setTimeout(() => {
-        manageMessage(1)
+        manageMessage(1,value)
     }, 500)
     chat.scrollTop = chat.scrollHeight - chat.clientHeight;
 }
@@ -143,18 +143,19 @@ function manageTyping(trigger) {
     }
 }
 
-function manageMessage(trigger = 0) {
+function manageMessage(trigger = 0,value) {
 
     manageTyping(trigger)
     isTyping++
     setTimeout(() => {
         if (isTyping === 1) {
             manageTyping(0)
-            fetch('http://127.0.0.1:8000/test/', {
-                method: 'GET',
+            fetch('http://127.0.0.1:8000/getMsg/', {
+                method: 'POST',
                 headers: {
                     'Accept': 'application/json'
-                }
+                },
+                body:'{"speechRecognitionHypotesis":"'+value+'"}',
             }).then(response => response.json())
                 .then(response => chat.innerHTML = chat.innerHTML + '<div class="message stark"><span>' + JSON.stringify(response["Message"]) + '</span><div class="timeMessage">' + getCurrentTime() + '</div><i onclick="speak_message(this)" class="play_text uil uil-play"></i></div>')
                 .then(response => chat.scrollTop = chat.scrollHeight - chat.clientHeight)

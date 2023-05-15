@@ -260,7 +260,7 @@ class LanguageUnderstanding:
                         print("Error")
                         print(e)
 
-            if(len(local_complements)==0 and len(local_modifiers)==1 and "!" in local_modifiers):
+            if(local_complements!=None and local_modifiers!=None and len(local_complements)==0 and len(local_modifiers)==1 and "!" in local_modifiers):
                 local_complements.append("not")
                 local_modifiers.pop()
             complements.append(local_complements)

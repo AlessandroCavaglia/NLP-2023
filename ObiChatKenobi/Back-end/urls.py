@@ -23,4 +23,5 @@ from ApiApplication import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('getMsg/', views.BotApiView.as_view()),
+    path('', views.home),
 ]
