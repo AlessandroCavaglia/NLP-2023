@@ -19,10 +19,35 @@ def parse_tsv_file(file_path):
     df = pd.read_csv(file_path, sep='\t')
     return df
 
+
 def average_length(list):
     lengths = [len(sublist) for sublist in list]
     avg_length = statistics.mean(lengths)
     return avg_length
+
+
+def intersection(lst1, lst2):
+    lst3 = [value for value in lst1 if value in lst2]
+    return lst3
+
+
+def calc_similarity(lists):
+    result = 0
+    for list1 in lists:
+        for list2 in lists:
+            if list2 != list1:
+                result += len(intersection(list1, list2)) / min(len(list1), len(list2))
+    print(result / (pow(len(lists),2) - (len(lists))))
+
+def refine_dataset(dataset,k):
+    for key in dataset:
+        avg = int(average_length(dataset[key]))
+        print(avg,key,len(dataset[key]))
+        dataset[key] = [elem for elem in  dataset[key] if abs(len(elem)-avg) <= k]
+        avg = int(average_length(dataset[key]))
+        print(avg, key, len(dataset[key]))
+
+
 def prepare_dataset(dataframe):
     dataset = {
         'door': [],
@@ -34,11 +59,16 @@ def prepare_dataset(dataframe):
     for index, row in dataframe.iterrows():
         for column in dataframe.columns:
             dataset[column].extend([lemmatized_tokens(row[column])])
+    calc_similarity(dataset['door'])
+    calc_similarity(dataset['ladybug'])
+    calc_similarity(dataset['pain'])
+    calc_similarity(dataset['blurriness'])
+    refine_dataset(dataset,4)
+    calc_similarity(dataset['door'])
+    calc_similarity(dataset['ladybug'])
+    calc_similarity(dataset['pain'])
+    calc_similarity(dataset['blurriness'])
 
-    print(average_length(dataset['door']))
-    print(average_length(dataset['ladybug']))
-    print(average_length(dataset['pain']))
-    print(average_length(dataset['blurriness']))
 
 
 # Remove punctuation, capital letters, stop words, and lemmatize verbs to their base form
@@ -69,11 +99,6 @@ if __name__ == "__main__":
     lemmatizer = WordNetLemmatizer()
 
     prepare_dataset(df)
-
-
-    sentence = "The quick brown fox jumps over the lazy dog."
-
-    print(lemmatized_tokens(sentence))
 
     # Intersezione lessicale
     # overlap = lemmas1.intersection(lemmas2)
