@@ -4,11 +4,9 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from nltk.tag import pos_tag
 import statistics
-import pattern
-import string
-import csv
 import pandas as pd
 
+DEVIATION=4
 
 # Concreti
 # Generico   ->  Door    Specifico   ->  LadyBug
@@ -42,13 +40,11 @@ def calc_similarity(lists):
 def refine_dataset(dataset,k):
     for key in dataset:
         avg = int(average_length(dataset[key]))
-        print(avg,key,len(dataset[key]))
         dataset[key] = [elem for elem in  dataset[key] if abs(len(elem)-avg) <= k]
         avg = int(average_length(dataset[key]))
-        print(avg, key, len(dataset[key]))
 
 
-def prepare_dataset(dataframe):
+def elaborate_dataset(dataframe):
     dataset = {
         'door': [],
         'ladybug': [],
@@ -59,14 +55,24 @@ def prepare_dataset(dataframe):
     for index, row in dataframe.iterrows():
         for column in dataframe.columns:
             dataset[column].extend([lemmatized_tokens(row[column])])
+
+    print("Similarity for term Door: ")
     calc_similarity(dataset['door'])
+    print("Similarity for term LadyBug: ")
     calc_similarity(dataset['ladybug'])
+    print("Similarity for term Pain: ")
     calc_similarity(dataset['pain'])
+    print("Similarity for term Blurriness: ")
     calc_similarity(dataset['blurriness'])
-    refine_dataset(dataset,4)
+    print("Refining dataset removing sentences that are at least ",DEVIATION," apart from avarage lenght")
+    refine_dataset(dataset,DEVIATION)
+    print("Similarity for term Door: ")
     calc_similarity(dataset['door'])
+    print("Similarity for term LadyBug: ")
     calc_similarity(dataset['ladybug'])
+    print("Similarity for term Pain: ")
     calc_similarity(dataset['pain'])
+    print("Similarity for term Blurriness: ")
     calc_similarity(dataset['blurriness'])
 
 
@@ -98,11 +104,5 @@ if __name__ == "__main__":
 
     lemmatizer = WordNetLemmatizer()
 
-    prepare_dataset(df)
+    elaborate_dataset(df)
 
-    # Intersezione lessicale
-    # overlap = lemmas1.intersection(lemmas2)
-    # overlap_count = len(overlap)
-    # Usare 1/min(due definizioni)
-
-    # Fare post processing
