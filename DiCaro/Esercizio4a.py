@@ -7,6 +7,7 @@ from nltk.tag import pos_tag
 from sklearn.metrics.pairwise import cosine_similarity
 import spacy
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def chunking(file):
@@ -14,14 +15,16 @@ def chunking(file):
         testo = file.read()
     # Utilizziamo un'espressione regolare per separare il testo in frasi
     # considerando il punto seguito da uno spazio come delimitatore delle frasi
-    phrases = re.split(r'\.', testo)
+    phrases = re.split(r'\. |\n', testo)
     return phrases
+
 
 def elaborate_corpus(corpus):
     result = []
     for phrase in corpus:
-        result.append(lemmatized_tokens(phrase))
+        result.append(' '.join(lemmatized_tokens(phrase)))
     return result
+
 
 def lemmatized_tokens(text):
     tokens = word_tokenize(text.lower())
@@ -36,7 +39,6 @@ def lemmatized_tokens(text):
     return lemmas
 
 
-
 def calc_embedding(lists):
     result = []
     nlp = spacy.load('en_core_web_lg')
@@ -45,26 +47,24 @@ def calc_embedding(lists):
         result.append(doc.vector)
     return result
 
-def calc_basic_similarity_metrics(corpus, aggregation_number):
-    unified_corpus = []
-    paragraf = []
-    #sistemo il corpus come unione delle parole delle singole frasi
-    for phrase in corpus:
-        unified_corpus.append(' '.join(phrase))
 
-    for i in range(0, len(unified_corpus), aggregation_number):
-        paragraf.append(' '.join((unified_corpus[i:i + aggregation_number])))
+def calc_basic_similarity_metrics(corpus, aggregation_number):
+    paragraf = []
+    # sistemo il corpus come unione delle parole delle singole frasi
+
+    for i in range(0, len(corpus), aggregation_number):
+        paragraf.append(' '.join((corpus[i:i + aggregation_number])))
     embeddings = calc_embedding(paragraf)
     similarity = []
     for index, embed in enumerate(embeddings):
         if index < len(embeddings) - 1:
             similarity.append(cosine_similarity([embed], [embeddings[index + 1]])[0][0])
 
-    return similarity[:len(similarity)-1]
+    return similarity[:len(similarity) - 1]
 
 
 if __name__ == "__main__":
-    #Lettura input
+    # Lettura input
     filename = 'Corpus4a_Article'
 
     nltk.download('punkt')
@@ -74,7 +74,9 @@ if __name__ == "__main__":
     nltk.download('averaged_perceptron_tagger')
     lemmatizer = WordNetLemmatizer()
     print(elaborate_corpus(chunking(filename)))
-    embed = calc_basic_similarity_metrics(elaborate_corpus(chunking(filename)),3)
+    # calcolo embeddings diviso a paragrafri di N frasi
+    dataset = chunking(filename)
+    embed = calc_basic_similarity_metrics(elaborate_corpus(chunking(filename)), 3)
 
     # Traccia il grafico
     plt.plot(range(len(embed)), embed)
@@ -87,3 +89,7 @@ if __name__ == "__main__":
 
     # Mostra il grafico
     plt.show()
+
+    print(np.argsort(embed[1:len(embed) - 1])[:3])
+    for index in np.argsort(embed[1:len(embed) - 1])[:3]:
+        print(dataset[(index + 1) * 3])
