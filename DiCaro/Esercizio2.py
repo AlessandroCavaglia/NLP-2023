@@ -4,14 +4,24 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from nltk.tag import pos_tag
 from nltk.corpus import wordnet
-
+import statistics
 import pandas as pd
 
 RELEVANT_WORD_SIZE_FOR_PARENT=10
-MAX_SYNSET_HEIGHT=2
+MAX_SYNSET_HEIGHT=5
 MEANING_CANDIDATES_SIZE=10
+DEVIATION=4
 
 meaningCandidates=[]
+def average_length(list):
+    lengths = [len(sublist) for sublist in list]
+    avg_length = statistics.mean(lengths)
+    return avg_length
+def refine_dataset(dataset,k):
+    for key in dataset:
+        avg = int(average_length(dataset[key]))
+        dataset[key] = [elem for elem in  dataset[key] if abs(len(elem)-avg) <= k]
+        avg = int(average_length(dataset[key]))
 
 def parse_tsv_file(file_path):
     df = pd.read_csv(file_path, sep='\t')
@@ -102,6 +112,9 @@ def elaborate_dataset(dataframe):
     for index, row in dataframe.iterrows():
         for column in dataframe.columns:
             dataset[column].extend([lemmatized_tokens(row[column])])
+    print("Refining dataset removing sentences that are at least ",DEVIATION," apart from avarage lenght")
+    refine_dataset(dataset,DEVIATION)
+
     print("\n\n\n--- ELABORATING DOOR")
     doorWords=getWordsInOrder(dataset['door'])
     doorParentSynsetCandidates=getSynsetsInOrderFromWordNet(doorWords[0:RELEVANT_WORD_SIZE_FOR_PARENT])
