@@ -8,8 +8,8 @@ from nltk.corpus import wordnet
 import pandas as pd
 
 RELEVANT_WORD_SIZE_FOR_PARENT=10
-RELEVANT_WORD_SIZE_FOR_MEANING=20
-RELEVANCE_TRESHOLD=0.2
+MAX_SYNSET_HEIGHT=2
+MEANING_CANDIDATES_SIZE=10
 
 meaningCandidates=[]
 
@@ -40,6 +40,7 @@ def lemmatized_tokens(text):
     return lemmas
 
 def getWordsInOrder(sentences):
+    print("ELABORATING WORDS FROM DATASET ON ", len(sentences), " SENTENCES")
     words_dict={}
     for sentence in sentences:
         for word in sentence:
@@ -49,45 +50,45 @@ def getWordsInOrder(sentences):
                 words_dict[word]=1
     my_list = list(words_dict.items())
     sorted_list = sorted(my_list, key=lambda x: x[1],reverse=True)
-    for item in sorted_list:
+    print("ELABORATED WORDS, SHOWING FIRST",RELEVANT_WORD_SIZE_FOR_PARENT, " RELEVANT WORDS")
+    for item in sorted_list[0:RELEVANT_WORD_SIZE_FOR_PARENT]:
         print(item)
     return sorted_list
 
 def getSynsetsInOrderFromWordNet(words):
+    print("ELABORATING SYNSET SEARCH ON ",len(words)," WORDS")
     synsetWithHeight=[]
     for word in words:
         synsets=wordnet.synsets(word[0])
         for synset in synsets:
-            synsetWithHeight.append((synset.name(),synset.max_depth(),synset))
+            if(synset.max_depth()>MAX_SYNSET_HEIGHT):
+                synsetWithHeight.append((synset.name(),synset.max_depth(),synset))
     sortedSynsetWithHeight = sorted(synsetWithHeight, key=lambda x: x[1])
-    for item in sortedSynsetWithHeight:
-        print(item)
+    print("FOUND A TOTAL OF ",len(sortedSynsetWithHeight)," SYNSETS ")
+    #for item in sortedSynsetWithHeight:
+    #    print(item)
     return sortedSynsetWithHeight
 
-def calcSimilarityForSynset(synset,sentences,meaningCandidates):
+def calcSimilarityForSynset(synset,sentences):
     if(not any(synset.name() == item[0] for item in meaningCandidates)):
         similarity = calc_similarity(lemmatized_tokens(synset.definition()), sentences)
-        if (similarity >= RELEVANCE_TRESHOLD):
-            meaningCandidates.append((synset.name(), similarity))
-        else:
-            meaningCandidates.append((synset.name(), -1))
+        meaningCandidates.append((synset.name(), similarity))
 
     for hyponim in synset.hyponyms():
-        calcSimilarityForSynset(hyponim,sentences,meaningCandidates)
+        if (not any(hyponim.name() == item[0] for item in meaningCandidates)):
+            calcSimilarityForSynset(hyponim,sentences)
 
 
 
 def getMeaningCandidatesFromSynsets(synsets,sentences):
-    meaningCandidates=[]
+    print("ELABORATING MEANING ON ",len(synsets)," WITH A TOTAL OF ",len(sentences)," DEFINITIONS")
     for synset in synsets:
-        calcSimilarityForSynset(synset[2],sentences,meaningCandidates)
-
-    meaningCandidates = [tuple for tuple in meaningCandidates if tuple[1] >= 0]
-
-    sortedmeaningCandidates = sorted(meaningCandidates, key=lambda x: x[1])
-    for item in sortedmeaningCandidates:
+        calcSimilarityForSynset(synset[2],sentences)
+    sortedmeaningCandidates = sorted(meaningCandidates, key=lambda x: x[1],reverse=True)
+    print("ELABORATED MEANING, SHOWING FIRST ",MEANING_CANDIDATES_SIZE," RESULTS WITH SCORES: ")
+    for item in sortedmeaningCandidates[0:MEANING_CANDIDATES_SIZE]:
         print(item)
-    return sortedmeaningCandidates
+    return sortedmeaningCandidates[0:MEANING_CANDIDATES_SIZE]
 
 
 def elaborate_dataset(dataframe):
@@ -101,12 +102,28 @@ def elaborate_dataset(dataframe):
     for index, row in dataframe.iterrows():
         for column in dataframe.columns:
             dataset[column].extend([lemmatized_tokens(row[column])])
-    print("WORDS")
+    print("\n\n\n--- ELABORATING DOOR")
     doorWords=getWordsInOrder(dataset['door'])
-    print("SYNSET")
     doorParentSynsetCandidates=getSynsetsInOrderFromWordNet(doorWords[0:RELEVANT_WORD_SIZE_FOR_PARENT])
-    print("MEANING")
     doorMeaningCandidates=getMeaningCandidatesFromSynsets(doorParentSynsetCandidates,dataset['door'])
+    while(len(meaningCandidates)>0):
+        meaningCandidates.pop()
+    print("\n\n\n--- ELABORATING LADYBUG")
+    ladyBugWords=getWordsInOrder(dataset['ladybug'])
+    ladyBugParentSynsetCandidates=getSynsetsInOrderFromWordNet(ladyBugWords[0:RELEVANT_WORD_SIZE_FOR_PARENT])
+    ladyBugMeaningCandidates=getMeaningCandidatesFromSynsets(ladyBugParentSynsetCandidates,dataset['ladybug'])
+    while(len(meaningCandidates)>0):
+        meaningCandidates.pop()
+    print("\n\n\n--- ELABORATING PAIN")
+    painWords=getWordsInOrder(dataset['pain'])
+    painParentSynsetCandidates=getSynsetsInOrderFromWordNet(painWords[0:RELEVANT_WORD_SIZE_FOR_PARENT])
+    painMeaningCandidates=getMeaningCandidatesFromSynsets(painParentSynsetCandidates,dataset['pain'])
+    while(len(meaningCandidates)>0):
+        meaningCandidates.pop()
+    print("\n\n\n--- ELABORATING BLURRINESS")
+    blurrinessBugWords=getWordsInOrder(dataset['blurriness'])
+    blurrinessParentSynsetCandidates=getSynsetsInOrderFromWordNet(blurrinessBugWords[0:RELEVANT_WORD_SIZE_FOR_PARENT])
+    blurrinessMeaningCandidates=getMeaningCandidatesFromSynsets(blurrinessParentSynsetCandidates,dataset['blurriness'])
 
 if __name__ == "__main__":
     # Lettura CSV
