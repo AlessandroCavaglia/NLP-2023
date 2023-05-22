@@ -7,9 +7,9 @@ from nltk.corpus import wordnet
 import statistics
 import pandas as pd
 
-RELEVANT_WORD_SIZE_FOR_PARENT=10
-MAX_SYNSET_HEIGHT=5
-MEANING_CANDIDATES_SIZE=10
+RELEVANT_WORD_SIZE_FOR_GENUS=5
+MIN_SYNSET_HEIGHT=2
+MEANING_CANDIDATES_SIZE=5
 DEVIATION=4
 
 meaningCandidates=[]
@@ -34,7 +34,7 @@ def intersection(lst1, lst2):
 def calc_similarity(definition,lists):
     result = 0
     for list1 in lists:
-            result += len(intersection(list1, definition)) / min(len(list1), len(definition))
+            result += len(intersection(list1, definition)) / ((len(list1)+len(definition))/2)
     return result / (len(lists))
 
 def lemmatized_tokens(text):
@@ -60,8 +60,8 @@ def getWordsInOrder(sentences):
                 words_dict[word]=1
     my_list = list(words_dict.items())
     sorted_list = sorted(my_list, key=lambda x: x[1],reverse=True)
-    print("ELABORATED WORDS, SHOWING FIRST",RELEVANT_WORD_SIZE_FOR_PARENT, " RELEVANT WORDS")
-    for item in sorted_list[0:RELEVANT_WORD_SIZE_FOR_PARENT]:
+    print("ELABORATED WORDS, SHOWING FIRST", RELEVANT_WORD_SIZE_FOR_GENUS, " RELEVANT WORDS")
+    for item in sorted_list[0:RELEVANT_WORD_SIZE_FOR_GENUS]:
         print(item)
     return sorted_list
 
@@ -71,7 +71,7 @@ def getSynsetsInOrderFromWordNet(words):
     for word in words:
         synsets=wordnet.synsets(word[0])
         for synset in synsets:
-            if(synset.max_depth()>MAX_SYNSET_HEIGHT):
+            if(synset.max_depth()>MIN_SYNSET_HEIGHT):
                 synsetWithHeight.append((synset.name(),synset.max_depth(),synset))
     sortedSynsetWithHeight = sorted(synsetWithHeight, key=lambda x: x[1])
     print("FOUND A TOTAL OF ",len(sortedSynsetWithHeight)," SYNSETS ")
@@ -116,37 +116,34 @@ def elaborate_dataset(dataframe):
     refine_dataset(dataset,DEVIATION)
 
     print("\n\n\n--- ELABORATING DOOR")
+
     doorWords=getWordsInOrder(dataset['door'])
-    doorParentSynsetCandidates=getSynsetsInOrderFromWordNet(doorWords[0:RELEVANT_WORD_SIZE_FOR_PARENT])
+    doorParentSynsetCandidates=getSynsetsInOrderFromWordNet(doorWords[0:RELEVANT_WORD_SIZE_FOR_GENUS])
     doorMeaningCandidates=getMeaningCandidatesFromSynsets(doorParentSynsetCandidates,dataset['door'])
     while(len(meaningCandidates)>0):
         meaningCandidates.pop()
     print("\n\n\n--- ELABORATING LADYBUG")
     ladyBugWords=getWordsInOrder(dataset['ladybug'])
-    ladyBugParentSynsetCandidates=getSynsetsInOrderFromWordNet(ladyBugWords[0:RELEVANT_WORD_SIZE_FOR_PARENT])
+    ladyBugParentSynsetCandidates=getSynsetsInOrderFromWordNet(ladyBugWords[0:RELEVANT_WORD_SIZE_FOR_GENUS])
     ladyBugMeaningCandidates=getMeaningCandidatesFromSynsets(ladyBugParentSynsetCandidates,dataset['ladybug'])
     while(len(meaningCandidates)>0):
         meaningCandidates.pop()
     print("\n\n\n--- ELABORATING PAIN")
     painWords=getWordsInOrder(dataset['pain'])
-    painParentSynsetCandidates=getSynsetsInOrderFromWordNet(painWords[0:RELEVANT_WORD_SIZE_FOR_PARENT])
+    painParentSynsetCandidates=getSynsetsInOrderFromWordNet(painWords[0:RELEVANT_WORD_SIZE_FOR_GENUS])
     painMeaningCandidates=getMeaningCandidatesFromSynsets(painParentSynsetCandidates,dataset['pain'])
     while(len(meaningCandidates)>0):
         meaningCandidates.pop()
     print("\n\n\n--- ELABORATING BLURRINESS")
     blurrinessBugWords=getWordsInOrder(dataset['blurriness'])
-    blurrinessParentSynsetCandidates=getSynsetsInOrderFromWordNet(blurrinessBugWords[0:RELEVANT_WORD_SIZE_FOR_PARENT])
+    blurrinessParentSynsetCandidates=getSynsetsInOrderFromWordNet(blurrinessBugWords[0:RELEVANT_WORD_SIZE_FOR_GENUS])
     blurrinessMeaningCandidates=getMeaningCandidatesFromSynsets(blurrinessParentSynsetCandidates,dataset['blurriness'])
 
 if __name__ == "__main__":
     # Lettura CSV
     file_path = 'TLN-definitions-23.tsv'
     df = parse_tsv_file(file_path)
-
-
-
     lemmatizer = WordNetLemmatizer()
-
     elaborate_dataset(df)
 
 '''    nltk.download('punkt')
