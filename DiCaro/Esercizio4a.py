@@ -9,6 +9,12 @@ import spacy
 import matplotlib.pyplot as plt
 import numpy as np
 
+#Hard 27 frasi football
+#30 frasi basket
+#33 frasi golf
+#29 frasi baseball
+
+CHUNIKING_FACTOR=3
 
 def chunking(file):
     with open(file, 'r', encoding='utf-8') as file:
@@ -54,18 +60,46 @@ def calc_basic_similarity_metrics(corpus, aggregation_number):
 
     for i in range(0, len(corpus), aggregation_number):
         paragraf.append(' '.join((corpus[i:i + aggregation_number])))
+
     embeddings = calc_embedding(paragraf)
     similarity = []
     for index, embed in enumerate(embeddings):
         if index < len(embeddings) - 1:
             similarity.append(cosine_similarity([embed], [embeddings[index + 1]])[0][0])
 
-    return similarity[:len(similarity) - 1]
+    return similarity[:len(similarity)-1]
 
+def calc_prototype_similarity_metrics(corpus, aggregation_number):
+    paragraf = []
+    # sistemo il corpus come unione delle parole delle singole frasi
+
+    for i in range(0, len(corpus), aggregation_number):
+        paragraf.append(' '.join((corpus[i:i + aggregation_number])))
+
+    embeddings = calc_embedding(paragraf)
+    prototype=[]
+    count=0
+    similarity = []
+    for index, embed in enumerate(embeddings):
+        if(len(prototype)==0):
+            prototype=embed
+            similarity.append(1)
+            count=1
+        elif(len(prototype)>0):
+            protoSim=cosine_similarity([embed], [prototype])[0][0]
+            similarity.append(protoSim)
+            if(index<len(embeddings)-1 and protoSim < (cosine_similarity([embed], [embeddings[index+1]])[0][0])-0.2):
+                count=1
+                prototype = embed
+            else:
+                prototype = (prototype*count+embed)/(count+1)
+                count+=1
+
+    return similarity[:len(similarity)-1]
 
 if __name__ == "__main__":
     # Lettura input
-    filename = 'Corpus4a_Article'
+    filename = 'Corpus4a_Article_Hard'
 
     nltk.download('punkt')
     nltk.download('stopwords')
@@ -76,7 +110,7 @@ if __name__ == "__main__":
     print(elaborate_corpus(chunking(filename)))
     # calcolo embeddings diviso a paragrafri di N frasi
     dataset = chunking(filename)
-    embed = calc_basic_similarity_metrics(elaborate_corpus(chunking(filename)), 3)
+    embed = calc_prototype_similarity_metrics(elaborate_corpus(chunking(filename)), CHUNIKING_FACTOR)
 
     # Traccia il grafico
     plt.plot(range(len(embed)), embed)
@@ -90,6 +124,11 @@ if __name__ == "__main__":
     # Mostra il grafico
     plt.show()
 
-    print(np.argsort(embed[1:len(embed) - 1])[:3])
+    print(np.argsort(embed[0:len(embed)])[:3])
+    paragraf = []
+    # sistemo il corpus come unione delle parole delle singole frasi
+
+    for i in range(0, len(dataset), CHUNIKING_FACTOR):
+        paragraf.append(' '.join((dataset[i:i + CHUNIKING_FACTOR])))
     for index in np.argsort(embed[1:len(embed) - 1])[:3]:
-        print(dataset[(index + 1) * 3])
+        print(paragraf[index])
