@@ -59,14 +59,19 @@ class DialogueManager:
         self.correctAnswers=0
         self.wrongAnswers=0
         self.dialogueAction = [("START", "START")]
-        self.questionsToAsk.append(Question(["how old is a 7 years old?"], ["be"], ["7", "7 years", "7 years old"],
-                                            ["7 years old was the right answer, let's move on, "]))
-        self.questionsToAsk.append(Question(["in which country does Rome reside"], ["be", "reside"], ["italy"],
-                                            ["it resides in Italy, but now let's go to the next question: ",
-                                             "last time i check it was in Italy! But i may be wrong, let's keep going: "]))
-        self.questionsToAsk.append(Question(["can a priest get married?"], ["be", "can"], ["no", "not"],
-                                            ["he absolutely can't, let's go on and try with another question: "]))
-
+        self.questionsToAsk.append(Question(["What is the core component of a light-saber?","What is the most important part of a light-saber?"], ["be","make"], [['kyber crystal'],['kyber-crystal'],['a kyber-crystal'], ['crystal']],
+                                            ["Kyber crystal was the right answer, let's move on, ","the correct answer is kyber crystal, it's an important subject youngling, let's move on, "]))
+        self.questionsToAsk.append(Question(["Can a jedi use the force for personal gain?","If you will become a jedi, can you use the force for personal gain?"], ["can", "be"], [['no'],['not']],
+                                            ["a jedi can't and never will use the force for personal gain! Now let's go to the next question: ",
+                                             "a jedi absolutely can't use the force for personal gain! let's keep going: "]))
+        self.questionsToAsk.append(Question(["can a jedi get involved in a relationship?","can a jedi get into a romantic relationship?"], ["be", "can"], [['no'], ['not']],
+                                            ["a jedi can't let his emotions win over his connection with the force, let's go on and try with another question: ","you must calm your horses, a jedi can't get involved, the force is our only love, let's move on"]))
+        self.questionsToAsk.append(Question(["where is the jedi temple located?"], ["be", "locate","reside"], [['coruscant']],
+                                            ["our temple is located on Coruscant let's keep going to the next question: ","our temple and our council resides in Coruscant, let's move on"]))
+        self.questionsToAsk.append(Question(["as jedis we work to bring the force to wich state?"], ["be", "bring"], [['balance'],['balanced'],['state of balance']],
+                                            ["as jedis we work to bring balance to the force, let's keep going to the next question: ","our goal is to keep balance to the force, let's move on"]))
+        self.questionsToAsk.append(Question(["what are the three main pillars of Jedi training?"], ["be"], [['knowledge','&','defense','&','armony'],['defense','&','knowledge','&','armony'],['armony','&','defense','&','knowledge'],['defense','&','armony','&','knowledge'],['defense','&','knowledge','&','armony']],
+                                            ["the three main pillars are knowledge,defense,armony, let's keep going to the next question: "]))
         self.welcomAntePhrases.append(Phrase(
             "Welcome young student! Thrilled to become a jedi? This if your first question to check if you are good: ",
             1))
@@ -157,10 +162,13 @@ class DialogueManager:
                 None in answers.complements or None in answers.verbs or None in answers.modifiers):  # If our parsing trew an exception it means we didn't understand the answer
             trueAnswer = "UNK"
         else:  # We understood the answer so we check if it is correct
-            for phrase in answers.complements:
+            for sol in self.askedQuestion.correctAnswers:
+                if(sol in answers.complements):
+                    trueAnswer="TRUE"
+            '''for phrase in answers.complements:
                 for elem in phrase:
                     if (elem.lower() in self.askedQuestion.correctAnswers):
-                        trueAnswer = "TRUE"
+                        trueAnswer = "TRUE"'''
         if(trueAnswer=="TRUE"):
             self.correctAnswers+=1
         if(trueAnswer=="FALSE"):
