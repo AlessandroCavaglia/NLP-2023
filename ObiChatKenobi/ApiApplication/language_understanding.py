@@ -221,7 +221,7 @@ class LanguageUnderstanding:
         sent = doc._sentences[0]._constituency
         (leaf_nodes,verb_count) = self.get_leaf_nodes(sent) #While we explore the tree we estimate how many verbs are there
         print("cont verb",verb_count)
-        print("sentimant",doc.sentences[0].sentiment)
+        print("sentiment",doc.sentences[0].sentiment)
         complements = []
         modifiers = []
         verbsFinal = []
