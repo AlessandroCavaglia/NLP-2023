@@ -79,7 +79,7 @@ def getSynsetsInOrderFromWordNet(words):
     print("ELABORATING SYNSET SEARCH ON ", len(words), " WORDS")
     synsetWithHeight = []
     for word in words:
-        synsets = wordnet.synsets(word[0])
+        synsets = wordnet.synsets(word[0])[0]
         for synset in synsets:
             if synset.max_depth() > MIN_SYNSET_HEIGHT:
                 synsetWithHeight.append((synset.name(), synset.max_depth(), synset))
