@@ -1,13 +1,13 @@
 import re
-import nltk
 import spacy
 from nltk.corpus import wordnet
 
 
 
 VERB="hit"
-CATEGORY_HEIGHT=2
+CATEGORY_HEIGHT=3
 MIN_SENTENCES=4
+
 
 def parse_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
