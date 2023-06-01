@@ -36,7 +36,7 @@ def extract_verb_parameters(tokenized_dataset, verb):
                 elif token.dep_ == "dobj":
                     complement_object = token.text
 
-        if(subject!=None and subject!='' and complement_object!=None and complement_object!=''):
+        if subject!=None and subject!= '' and complement_object!=None and complement_object!= '':
             verb_parameters.append((subject,complement_object,sentence))
     return verb_parameters
 
@@ -90,7 +90,7 @@ if __name__ == "__main__":
     print("Number of meanings: ",len(meanings))
     avg=0
     for key in meanings:
-        if(len(meanings[key])>=MIN_SENTENCES):
+        if MIN_SENTENCES <= len(meanings[key]):
             print("MEANING: ",key)
             print("NUMBER OF SENTENCES: ",len(meanings[key]))
             print("SENTENCES: ",meanings[key])
