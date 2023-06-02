@@ -69,6 +69,8 @@ def generate_text_trigram(prob):
     current_trigram = ("[", "[", "[")
     generated_text = list(current_trigram)
     while current_trigram[-2:] != ("]", "]"):
+        if(len(generated_text)>100):
+            break
         if (len(generated_text) > 6):
             next_trigram = max(prob, key=lambda tri_gram: tri_gram[:2] == current_trigram[-2:])
             generated_text.append(next_trigram[-1])
