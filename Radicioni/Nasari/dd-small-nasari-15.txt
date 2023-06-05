@@ -9075,7 +9075,7 @@ bn:00281632n;Fly-by-wire;aircraft_2460.63;airbus_919.4;flight_835.1;boeing_469.7
 bn:00282896n;Looming;loom_14.98;image_8.12;object_6.86;optic flow_6.1;perceiver_4.76;magnifying glass_4.65;recede_3.69;invert_3.66;retina_3.64;mirage_3.47;physiological_3.32;perception_2.81;distant_2.78;automatic_2.69
 bn:00286781n;Biofilter;water_264.14;aquarium_168.11;wastewater_143.15;filter_135.8;biofilter_134.24;system_131.19;pollutant_130.04;odor_126.07;wetland_119.54;treatment_104.77;air pollution_96.17;greywater_90.89;aquaponics_90.26;stormwater_90.0
 bn:00289197n;Lying-in;shashthi_107.1;lying-in_48.08;hospital_29.21;woman_23.93;fund_22.99;worship_22.64;childbirth_22.46;sach_21.86;goddess_20.47;dufferin_19.88;desco_16.9;priyavrata_15.28;child_15.04;skanda_14.19
-bn:00289336n;Egotism; or, The Bosom-Serpent;hawthorne_233.63;bosom-serpent_26.83;snake_26.54;bosom_25.43;elliston_25.41;nathaniel hawthorne_18.89;mosses from an old manse_13.42;james thomas fields_12.6;tale_12.03;write_11.19;storey_10.86;scarlet letter_10.85;spider_10.44;the scarlet letter_10.37
+bn:00289336n;Egotism or, The Bosom-Serpent;hawthorne_233.63;bosom-serpent_26.83;snake_26.54;bosom_25.43;elliston_25.41;nathaniel hawthorne_18.89;mosses from an old manse_13.42;james thomas fields_12.6;tale_12.03;write_11.19;storey_10.86;scarlet letter_10.85;spider_10.44;the scarlet letter_10.37
 bn:00289341n;MATADOR;bull_395.92;matador_354.01;bullfighting_313.72;bullfight_162.24;bullfighter_128.98;recoilless_80.77;corrida_64.48;jallikattu_60.6;bravo_53.14;daredevil_49.23;armbrust_48.38;golani_46.07;eloganto_44.18;toro_42.57
 bn:00291639n;Counterattack;attack_217.6;german_211.91;anti-partisan_210.28;tank_205.78;force_150.88;infantry_148.85;operation_141.12;enemy_138.89;division_124.25;counterattack_110.31;army_87.19;panzer_85.4;clark_81.47;artillery_81.08
 bn:00293629n;Expect;tcl_143.05;language_102.8;expect_97.37;uucp_80.01;tk_67.03;script_58.61;autoit_57.55;object-oriented_54.73;class-based_42.73;imperative_37.88;perl_37.21;user_34.6;-lcb-_33.54;passw_32.7
@@ -9127,7 +9127,7 @@ bn:00334109n;ScrapBook;zotero_122.96;firefox_21.13;user_17.36;endnote_13.6;web b
 bn:00334558n;Interwoven;ecm_88.49;content_71.31;management_71.3;autonomy_65.78;interwoven_55.61;x1_50.12;information_47.49;document_46.55;hp_43.04;enterprise_38.91;alfresco_35.2;workflow_30.92;component_26.22;dfj_24.58
 bn:00335093n;Balding;bear_7.7;david balding_6.62;adam balding_6.62;rebecca balding_6.17;toby balding_6.09;al balding_5.96;trainer_5.94;jeff balding_5.92;ian balding_5.83;clare balding_5.26;surname_5.13;american_4.82;baldness_4.65;balding_4.44
 bn:00335472n;Orderly;arkham_228.01;asylum_116.95;orderly_84.75;patient_62.11;hospital_60.64;batman_43.34;nurse_36.08;joker_30.14;parachute_25.67;pfa_24.94;nursing_24.35;coates_21.64;default_18.05;dr._17.68
-bn:00336427n;Styler;alan styler_7.57;divine styler_6.78;trudie styler_6.36;styler_6.01;refer_2.64;;;;;;;;;
+bn:00336427n;Styler;alan styler_7.57;divine styler_6.78;trudie styler_6.36;styler_6.01;refer_2.64
 bn:00338702n;Unglued;card_617.43;creature_331.91;ability_195.43;mana_130.63;player_103.79;deck_100.22;magic_94.11;unglued_88.57;cost_84.57;keyword_72.52;block_71.29;ravnica_63.96;spell_61.33;rosewater_60.24
 bn:00339119n;WEAL;fm_116.84;weal_40.84;university_36.05;contemporary_31.06;adult_29.71;entercom_26.07;north carolina_25.69;greensboro_22.73;n.c._20.5;student_19.98;campus_18.4;college_16.02;aggie_15.72;simulcast_15.69
 bn:00341663n;Gratis;software_337.18;free_227.64;vocaloid_152.28;gratis_99.34;access_97.02;distribution_75.1;license_74.13;user_73.6;vocaloids_65.38;miku_61.9;linux_61.85;open_58.16;gmail_56.24;hatsune_46.39
@@ -9331,7 +9331,7 @@ bn:00582220n;Multinomial;multinomial_16.11;trinomial_10.97;polynomial_6.99;trino
 bn:00582929n;Efflorescence;concrete_671.53;efflorescence_172.78;cement_130.99;water_115.48;ggbs_94.95;aggregate_62.87;material_59.79;surface_58.79;portland cement_55.23;use_53.16;salt_50.99;ceramic_50.1;porous_49.26;mix_47.81
 bn:00587138n;Covariate;variable_173.21;covariate_144.03;confound_110.6;covariates_99.74;treatment_87.71;effect_64.3;regression_62.9;estimate_61.93;model_52.41;dependent variable_51.28;hazard_47.31;causal_42.9;datum_40.24;ancova_39.1
 bn:00588977n;Amatory;осколки_24.01;amatory_18.91;преступление_17.04;против_15.21;времени_15.12;багровый_11.92;guitars_11.87;дыши_11.27;сквозь_11.27;мной_11.18;рассвет_10.96;eyelids_9.65;дни_9.65;a-one_9.63
-bn:00589563n;KAVA;regional mexican_5.2;pueblo, colorado_5.19;kava_5.0;am_3.96;pueblo_3.89;radio station_2.96;license_2.81;format_2.58;usa_2.55;broadcast_2.48;;;;
+bn:00589563n;KAVA;regional mexican_5.2;pueblo, colorado_5.19;kava_5.0;am_3.96;pueblo_3.89;radio station_2.96;license_2.81;format_2.58;usa_2.55;broadcast_2.48
 bn:00589759n;FANG;ginga_41.02;asukari_33.39;densetsu_30.3;inu_27.28;weed_22.38;story_22.07;銀牙伝説ウィードスペシャル_18.28;gaiden_16.18;manga_15.31;compilation_13.33;tosaō_12.03;shōnen_10.96;tabidachi_10.15;hen_9.51
 bn:00591193n;Galette;pancake_354.96;breton_224.72;brittany_224.34;buckwheat_215.92;galette_190.34;cake_97.9;flour_70.97;pizza_65.73;eat_48.94;moulin_47.27;pie_45.47;cuisine_43.34;dish_43.08;filling_40.62
 bn:00591387n;NoB;pata_39.94;sentai_21.31;korochan_17.26;p.a.f._15.7;theme_11.69;nob_11.57;song_11.23;album_10.51;vocalist_10.26;tensou_9.57;japan_9.51;goseiger_9.26;go-onger_9.18;gokaiger_9.01
@@ -9449,7 +9449,7 @@ bn:00682130n;Blistering;townsend_45.81;album_37.12;mustaine_30.58;megadeth_19.65
 bn:00682240n;Broadband;broadband_1574.08;internet_723.46;service_402.79;modem_395.65;access_323.71;network_299.68;bandwidth_269.17;dsl_227.28;signal_220.94;fcc_209.4;dial-up_196.18;provider_194.03;cable_191.71;neutrality_189.96
 bn:00683443n;Odontogenic;cyst_341.93;pain_87.28;odontogenic_86.47;afp_64.48;radicular_64.15;tooth_54.44;ameloblastoma_42.54;periapical_38.82;epithelium_38.26;facial_36.52;epithelial_29.03;dentigerous_24.79;trigeminal neuralgia_24.21;odontoma_24.03
 bn:00685618n;Embryogenesis;cell_2112.1;embryo_1004.08;stem cell_515.77;tissue_375.75;mesoderm_368.17;ectoderm_326.9;gene_321.01;embryonic_268.29;haeckel_251.0;endoderm_237.39;embryogenesis_220.52;protein_219.33;differentiation_199.61;signal_192.83
-bn:00687731n;ANKH;ankylosis_6.09;protein_6.07;ankh_4.96;homolog_4.52;encode_3.3;progressive_3.26;gene_2.91;reading_2.53;human_2.32;;;;;
+bn:00687731n;ANKH;ankylosis_6.09;protein_6.07;ankh_4.96;homolog_4.52;encode_3.3;progressive_3.26;gene_2.91;reading_2.53;human_2.32
 bn:00688458n;Spaced;comedy_425.98;series_280.84;pegg_235.65;drama_208.63;episode_179.16;show_160.07;gervais_152.71;sitcom_145.96;film_145.02;spaced_124.94;situation comedy_119.74;wright_102.6;tv_102.58;shaun_101.02
 bn:00688934n;Bento;bento_383.96;rice_293.67;japanese_272.92;sushi_264.76;chopstick_223.7;tea_211.36;sausage_207.07;japan_167.98;food_167.36;dish_163.15;sweet potato_150.13;lunch_134.79;eat_126.88;meal_118.35
 bn:00689351n;Sunburnt;lanterna_10.34;frayne_9.81;phillipps_9.34;studios_8.32;album_6.94;badman records_6.35;brendan gamble_6.21;martin phillipps_6.05;the moon seven times_5.91;craig leon_5.32;the chills_5.12;sunburnt_5.09;dave gregory_5.06;flying nun records_4.87
@@ -9516,7 +9516,7 @@ bn:00749497n;Rout;battle_299.23;cavalry_261.35;army_248.48;force_181.37;phalanx_
 bn:00750836n;Equidistant;parabola_367.27;line_148.91;bisector_140.5;point_136.79;triangle_129.14;equidistant_120.18;perpendicular_113.64;directrix_87.91;parallel_86.24;incenter_80.83;angle_69.31;vertex_61.38;cue ball_58.39;tangent_57.41
 bn:00751804n;Hullo;vormsi_63.0;hullo_32.07;swede_19.8;estonia_18.96;rälby_18.85;island_18.61;rumpo_16.25;rannarootslased_12.23;diby_12.23;ormsö_11.91;sviby_11.79;borrby_11.68;vormsi parish_11.05;suuremõisa_10.87
 bn:00752024n;Disarticulation;amputation_262.49;limb_60.75;amputate_38.71;disarticulation_32.63;popow_27.87;amputee_26.59;traumatic_24.95;accident_15.58;prosthesis_15.48;body part_13.79;bone_11.69;heinrich_11.12;infection_10.63;surgical_10.38
-bn:00752169n;Self-Inflicted;jimmy palmer_6.65;leaether strip_6.61;from justin to kelly_6.06;dietzen_5.97;self-inflicted_4.71;ncis_4.26;tracklisting_4.01;8th_2.91;regular_2.3;cast_2.27;television_2.11;;;
+bn:00752169n;Self-Inflicted;jimmy palmer_6.65;leaether strip_6.61;from justin to kelly_6.06;dietzen_5.97;self-inflicted_4.71;ncis_4.26;tracklisting_4.01;8th_2.91;regular_2.3;cast_2.27;television_2.11
 bn:00752190n;OnyX;os_92.22;mac_88.19;onyx_59.14;application_58.54;tinkertool_53.84;software_38.47;cleangenius_36.58;version_24.19;helpmate_24.01;ide_22.04;free_20.94;system_20.26;file_15.18;tool_13.71
 bn:00753973n;Superabundance;turn tail_29.36;superabundance_27.94;album_24.67;track_24.13;knives_16.92;terra firma_15.93;young knives_14.21;band_13.96;release_11.72;chart_9.59;uk_9.49;attracted_9.02;single_8.79;no._8.33
 bn:00753983n;MUTED;dysbindin_53.08;pldn_24.55;muted_19.91;bloc1s2_18.4;protein_13.26;bloc1s1_12.26;dtnbp1_11.78;snapap_11.78;gene_10.96;schizophrenia_9.5;cno_8.11;biogenesis_8.07;organelle_7.43;interact_7.38
@@ -9526,7 +9526,7 @@ bn:00755298n;Firebombing;bombing_753.2;bomber_631.8;bomb_619.42;raid_456.63;atta
 bn:00756121n;Performativity;queer_198.91;performativity_198.34;searle_184.64;theory_133.35;performative_123.5;gender_84.69;butler_79.87;derrida_75.08;speech act_73.41;illocutionary_59.78;utterance_56.09;sedgwick_56.01;identity_45.78;austin_42.97
 bn:00756914n;Invisibility;invisible_518.4;cloak_441.95;invisibility_327.61;object_157.17;metamaterial_142.5;griffin_114.72;metamaterials_112.06;magic_99.48;light_90.98;ring_88.12;magical_77.35;sue_60.29;elaith_59.22;kemp_54.05
 bn:00758266n;Counterpoise;kossy_69.93;cmc_50.08;counterpoise_40.91;kook_40.11;gainesville_28.17;wgot-lp_28.1;book_17.05;magazine_13.29;civic media center_10.65;donna_9.41;zine_9.38;kooks_8.58;zines_7.09;willett_6.52
-bn:00766685n;Corker;john corker_6.82;thomas corker_6.82;bob corker_5.83;corker_5.27;occupational_3.9;tennessee_3.09;surname_2.92;senator_2.87;junior_2.71;politician_2.44;refer_2.2;currently_2.19;;
+bn:00766685n;Corker;john corker_6.82;thomas corker_6.82;bob corker_5.83;corker_5.27;occupational_3.9;tennessee_3.09;surname_2.92;senator_2.87;junior_2.71;politician_2.44;refer_2.2;currently_2.19
 bn:00767721n;Returner;trench coat_162.95;wear_78.95;milly_55.48;miyamoto_54.68;mizoguchi_40.77;woodson_37.45;trenchcoat_37.27;kaneshiro_24.39;alien_23.96;returner_16.16;anne suzuki_14.27;takeshi kaneshiro_12.45;leather_12.34;film_11.96
 bn:00768297n;Impossibility;force majeure_92.44;contract_74.86;impossibility_62.32;impracticability_52.18;party_45.25;act_27.36;excuse_26.82;obligation_22.56;defendant_21.96;hell or high water clause_21.38;doctrine_20.29;clause_20.27;performance_20.13;contract law_19.57
 bn:00769200n;Tracksuit;wear_267.89;fashion_170.71;tracksuit_158.26;clothing_155.97;catsuit_136.97;sportswear_133.42;2000s_117.67;popular_84.14;pant_77.97;trend_75.71;shirt_65.03;woman_64.22;catsuits_60.0;chic_57.84
@@ -9718,7 +9718,7 @@ bn:00944052n;Hydroquinone;hydroquinone_474.46;hydrogen peroxide_307.16;benzene_2
 bn:00944438n;Brewmaster;brewery_537.53;beer_473.12;brewing_234.76;ale_163.59;brewmaster_136.76;brew_107.17;lager_98.15;miguel_94.11;shiner_90.0;company_87.8;brewer_85.69;fitger_79.65;rahr_72.25;pale ale_70.29
 bn:00945103n;Stipend;stipend_239.91;internship_105.81;monarch_87.37;benefit_82.95;veteran_72.29;benefice_59.19;thorvaldsen_49.99;bill_48.92;pay_46.36;danegeld_40.59;hazlitt_39.87;gi_38.93;post-9_36.3;duty_33.36
 bn:00945976n;Wizardry;game_1522.74;wizardry_765.43;rpgs_575.87;dragon_395.43;rpg_375.74;player_347.88;quest_338.08;ultima_285.88;console_283.75;character_264.43;dungeon_256.31;series_208.88;role-playing_198.45;video game_195.95
-bn:00946327n;Rather;elizabeth rather_7.1;(1988 film)_7.02;dan rather_5.3;computer programming_4.5;forth_3.49;susan_3.29;presenter_3.22;expert_2.89;news_2.46;language_2.22;refer_2.17;character_2.03;;
+bn:00946327n;Rather;elizabeth rather_7.1;(1988 film)_7.02;dan rather_5.3;computer programming_4.5;forth_3.49;susan_3.29;presenter_3.22;expert_2.89;news_2.46;language_2.22;refer_2.17;character_2.03
 bn:00946434n;Expired;claire_50.48;morton_49.0;jay_34.86;sharam_16.78;parking_15.23;film_14.72;miniucchi_10.78;review_10.08;love seat_8.94;jason patric_7.99;attendant_6.84;drama_6.48;movie_6.37;critic_6.16
 bn:00946750n;Arrest;arrest_1054.57;person_731.7;police_682.73;constable_651.55;offence_544.61;officer_371.06;sheriff_361.27;court_299.82;criminal_284.24;suspect_276.69;commit_239.36;peace officer_207.41;police officer_205.86;crime_204.36
 bn:00949111n;Palmette;bracelet_434.06;palmette_269.59;dacian_202.11;motif_165.44;carpet_125.69;fleur-de-lis_97.78;lotus_92.22;papyrus_84.32;arabesque_83.91;ornament_80.63;tree_79.28;acanthus_60.02;bc_58.9;bracelets_55.4
@@ -9805,7 +9805,7 @@ bn:01030456n;Fishfinder;fish_849.65;fishing_782.56;sonar_343.29;blue marlin_218.
 bn:01030581n;Scapegoating;samsung_222.53;stereotype_188.72;anger_156.05;scapegoat_82.92;scapegoate_59.54;group_57.4;heterosexism_44.3;people_41.04;society_37.53;ingroup_36.28;tamil_33.46;angry_31.02;scapegoating_29.93;individual_29.52
 bn:01031475n;Wisely;wisely_120.84;ni_35.36;science fiction_30.99;su_24.52;pai_24.49;chinese_19.87;ni kuang_19.45;series_16.54;hong kong_15.65;kuang_14.18;novel_13.18;storey_13.17;wai_10.65;liu cixin_10.29
 bn:01033618n;Mirin;tofu_438.69;sake_312.23;mirin_219.39;soup_181.06;rice_176.87;sweet potato_167.46;soy sauce_162.13;soba_150.82;dish_141.14;japanese_139.6;noodle_122.03;broth_104.31;udon_103.86;flavor_99.97
-bn:01036020n;Rearrange;life in the so-called space age_6.95;god lives underwater_5.89;rearrange_4.11;airplay_3.66;listing_2.54;significant_2.45;originally_2.21;;;;;;;
+bn:01036020n;Rearrange;life in the so-called space age_6.95;god lives underwater_5.89;rearrange_4.11;airplay_3.66;listing_2.54;significant_2.45;originally_2.21
 bn:01038082n;ProtoStar;protostar_110.73;satellite_25.85;ss\/l_22.27;auction_21.11;intelsat_15.52;bankruptcy_15.46;spacecraft_12.94;ses-7_11.57;boeing_10.67;ses world skies_10.44;panamsat_9.39;in-orbit_9.08;direct-to-home_8.64;arianespace_8.63
 bn:01038324n;Regards;icp_38.73;taro_28.82;photography_17.39;capa_15.3;photojournalism_14.72;magazine_11.8;pohorylle_11.31;regard_10.93;robert capa_8.74;henri cartier-bresson_8.33;photographer_8.11;gerda_7.05;midtown_5.87;publication_5.84
 bn:01038658n;Part-time;hour_288.03;work_231.8;employee_209.76;worker_196.93;job_130.22;part-time_128.79;employer_125.46;internship_121.52;employment_109.94;pay_91.68;woman_72.43;full-time_68.94;labor_61.61;unemployment_57.69
@@ -10372,7 +10372,7 @@ bn:01663634n;Frumpy;frumpy_88.4;bohn_65.36;kravetz_53.06;rumpf_52.59;band_24.41;
 bn:01663657n;GRAIN;grain_1842.73;malt_457.53;famine_331.4;wheat_234.23;mash_221.73;elevator_207.66;silo_206.94;dry_182.82;food_176.5;whisky_162.28;barley_102.33;superplastic_99.67;quinoa_95.53;rice_93.3
 bn:01663932n;Thou;subjunctive_582.24;verb_440.96;thou_352.53;form_255.45;pronoun_227.36;use_191.8;singular_158.52;language_147.86;word_139.71;english_139.39;dialect_136.05;indicative_130.04;noun_127.03;plural_122.48
 bn:01668225n;Needless;anime_282.52;bbfc_94.37;cert_93.19;tv_80.5;series_72.11;needless_37.34;manga_28.23;ova_27.76;mvm_26.98;simeon_25.65;setsuna_24.83;funimation_23.03;arclight_22.02;madhouse_21.16
-bn:01668852n;Desideratum;synæsthesia_6.68;disc_6.3;desideratum_5.68;ambient_3.83;listing_2.57;;;;;;;;;
+bn:01668852n;Desideratum;synæsthesia_6.68;disc_6.3;desideratum_5.68;ambient_3.83;listing_2.57
 bn:01668880n;Possessory;possession_33.34;vehicle_19.98;impoundment_19.96;possessory_18.96;impound_17.65;tow_10.33;recover_10.32;auction_9.99;action_9.38;property_7.96;proceeding_7.16;j2d_5.7;j1st_5.65;zabrisky_5.56
 bn:01669238n;Fantasy;fantasy_2124.96;science fiction_572.23;genre_548.62;fiction_333.91;storey_142.45;element_138.91;novel_135.92;setting_112.21;horror_110.41;fantastic_103.29;supernatural_95.99;subgenre_90.52;literature_81.81;subgenres_77.41
 bn:01675676n;Fueled;fueled_39.07;chawla_34.32;rameet_17.97;startup_11.66;fuel_9.4;co-working_9.36;coworking_9.08;tech_8.89;collective_8.81;mobile_7.59;app store_7.55;box_7.05;space_7.0;swear_6.78
@@ -10598,7 +10598,7 @@ bn:01955205n;Bruit;tinnitus_275.9;bruit_77.03;aneurysm_73.73;patient_73.29;dialy
 bn:01956054n;Penitential;paenitentiale_291.25;penitential_230.63;umbrense_134.51;ecgberhti_92.84;penance_76.26;collection_57.65;anglo-saxon_57.64;canones_57.25;pseudo-bedae_50.91;canon_49.69;manuscript_49.64;pp_49.26;collectio_48.1;dacheriana_46.99
 bn:01956642n;TOTEM;lhc_247.57;particle_222.82;detector_206.1;cern_158.4;collision_136.36;alice_107.36;proton_92.1;energy_86.93;calorimeter_86.88;muon_77.83;tev_64.34;experiment_64.21;beam_61.96;hadron_50.5
 bn:01959738n;REFER;portugal_450.34;portuguese_255.65;lisbon_87.44;porto_44.95;country_42.49;km_41.13;madeira_39.97;aveiro_31.18;gdp_31.16;comboios de portugal_27.61;algarve_27.39;fertagus_25.22;economy_23.62;linha_22.54
-bn:01963946n;DiscoverEd;creative commons_5.23;search engine_4.4;educational_3.24;discover_2.79;build_2.22;;;;;;;;;
+bn:01963946n;DiscoverEd;creative commons_5.23;search engine_4.4;educational_3.24;discover_2.79;build_2.22
 bn:01965029n;Vireo;bird_1699.2;family_1086.71;passeriformes_1061.65;vireo_977.02;setophaga_943.45;order_882.04;specie_825.16;passerine_601.29;calidris_441.59;empidonax_359.33;bill_330.49;ana_297.14;plumage_295.17;medium-sized_294.64
 bn:01965782n;Economism;marx_82.33;economism_69.13;marxist_66.29;marxism_62.07;bettelheim_59.09;economicus_35.91;economic_34.49;hegel_30.13;homo_28.69;engels_23.0;orthodox_21.87;prokopovich_21.76;socialism_21.49;philosophy_20.58
 bn:01967074n;Shafted;drama_246.36;contestant_207.16;game show_157.53;situation comedy_130.6;show_114.44;children_99.93;comedy_86.11;kilroy-silk_51.88;documentary_51.24;strategy_49.8;reality_43.3;sitcom_42.58;dilemma_41.86;television_41.04
@@ -10691,7 +10691,7 @@ bn:02095395n;SuperB;gridpp_43.2;superb_34.93;lhc_27.67;collider_19.55;experiment
 bn:02095765n;Mailroom;mailroom_77.18;mail_43.38;package_34.43;pixar_20.92;sulley_18.49;film_18.22;monster_16.57;internal mail_16.22;msc_15.42;mailboy_15.2;mike_14.61;tracking_14.52;pigeon-hole_14.07;waymon_13.53
 bn:02097173n;Fondly;brian_21.45;scratchie_21.33;fondly_18.01;andy_17.32;album_11.03;brian deck_10.22;d'arcy wretzky_9.64;adam schlesinger_9.24;james iha_8.8;fountains of wayne_8.58;burkhard_8.13;the smashing pumpkins_7.48;chicago_6.61;lollygag_5.82
 bn:02097485n;Limitless;cannabis_262.12;cocaine_189.56;film_151.32;heroin_124.18;limitless_89.25;lsd_85.84;niro_83.73;eddie_79.2;nzt_66.02;mdma_59.84;cooper_55.18;lucy_54.97;marijuana_54.1;science fiction_46.14
-bn:02097813n;Maneuverability;see_2.66;;;;;;;;;;;;;
+bn:02097813n;Maneuverability;see_2.66
 bn:02099486n;Yelling;huntingdonshire_103.71;peterborough_55.58;neots_53.58;huntingdon_36.52;yelling_36.32;cambridgeshire_35.38;west norfolk_23.26;hildesley_18.11;eynesbury_16.17;st neots_15.61;eaton ford_14.84;little paxton_14.64;fenland_13.98;eaton socon_13.34
 bn:02102101n;Videoconferencing;video_817.03;videoconference_673.98;videophone_493.64;audio_294.95;internet_294.13;technology_245.67;user_226.72;isdn_222.86;skype_219.23;telepresence_207.98;videotelephony_207.46;system_202.23;service_188.9;vrs_188.48
 bn:02102104n;Declare;philby_235.84;soe_201.75;agent_42.58;novel_28.22;powers_23.51;khali_18.73;maclean_16.6;sis_16.37;resistance_15.93;british_15.66;mi6_15.63;burgess_14.73;litzi_13.75;rub_13.23
@@ -10758,7 +10758,7 @@ bn:02217326n;Anguish;sartre_220.23;existentialist_144.08;kierkegaard_128.22;exis
 bn:02217399n;Unearthing;isbn_102.87;tpb_89.94;no._86.85;moore_70.68;page_68.66;alan_59.87;hc_54.17;collect_43.91;fortean_41.92;ad_41.86;lex_31.5;unearth_25.39;john brown publishing ltd_23.12;veitch_22.67
 bn:02219443n;Supernumerary;dei_380.73;opus_380.33;supernumerary_306.31;worsley_109.99;prelature_101.93;paine_100.72;numerary_100.61;garter_91.61;magellan_86.12;expedition_77.03;voyage_67.48;numeraries_62.17;member_56.91;escrivá_56.86
 bn:02220142n;Unrelated;hiddleston_76.73;film_47.86;verena_44.03;joanna hogg_26.19;lloyd-hughes_20.49;tom hiddleston_20.29;anna_19.32;unrelated_18.84;london film festival_15.22;hogg_14.36;roscoe_11.68;archipelago_11.62;oakley_11.17;emma hiddleston_10.93
-bn:02222544n;Tingling;300bc_6.21;tili_5.97;kauko_5.9;tribe_5.73;dingling_5.64;union_5.12;tingle_4.73;avars_4.58;west_4.32;bc_2.64;china_2.31;c._2.28;;
+bn:02222544n;Tingling;300bc_6.21;tili_5.97;kauko_5.9;tribe_5.73;dingling_5.64;union_5.12;tingle_4.73;avars_4.58;west_4.32;bc_2.64;china_2.31;c._2.28
 bn:02224713n;Sequencing;sequence_999.8;dna_997.03;genome_978.98;gene_572.4;sequencing_457.98;pcr_430.86;protein_252.19;neanderthal_226.15;primer_211.12;rna_198.92;genomic_191.08;cell_185.01;sequenced_171.01;bacterium_169.56
 bn:02224947n;Topmost;finnish_28.56;topmost_24.78;saksala_18.04;lupari_17.87;band_17.02;holopainen_13.62;finland_11.19;mustaa_11.06;kasvot_11.01;sinut_10.96;heimo_9.8;vocal_9.65;hän_9.34;eero_8.46
 bn:02225669n;Fouling;foul_589.3;heat exchanger_372.46;water_349.62;membrane_318.01;particle_258.82;boiler_249.15;surface_219.9;heat_217.33;deposit_181.8;tube_174.56;process_170.22;pipe_167.67;cool_155.08;corrosion_153.09
@@ -10979,7 +10979,7 @@ bn:02512737n;Devoted;duff_316.59;elixir_54.9;clea_31.9;metamorphosis_18.07;album
 bn:02513494n;Perforce;perforce_281.58;file system_232.12;file_187.19;subversion_184.61;repository_146.37;server_93.36;client_86.21;filesystem_83.95;user_76.75;revision_75.8;git_72.2;software_70.33;version_69.08;tool_65.22
 bn:02513767n;Unedited;band_44.64;editors_30.63;album_28.55;in this light and on this evening_25.7;an end has a start_24.86;the back room_20.22;editor_19.89;box_19.4;release_19.19;song_15.23;sound_13.31;smokers outside the hospital doors_10.8;the weight of your love_10.35;single_8.91
 bn:02516228n;Strapless;mccallum_28.34;film_17.43;strapless_16.78;ganz_13.79;producer_12.25;brown_10.56;hare_10.45;role_8.36;david hare_7.67;hempel_7.45;lucasfilm_6.67;play_5.95;production_5.78;barron_5.6
-bn:02520049n;Foreground;structural level_7.49;foregrounding_6.5;see_2.18;;;;;;;;;;;
+bn:02520049n;Foreground;structural level_7.49;foregrounding_6.5;see_2.18
 bn:02521205n;Numinous;eliade_543.73;religion_213.33;experience_202.29;religious_173.89;god_115.56;mysticism_100.84;mystical_98.39;numinous_89.41;siegel_85.28;spirituality_78.0;spiritual_74.91;sublime_59.13;stace_52.37;sacred_50.94
 bn:02521861n;Expedient;expedient_27.21;landmark_25.43;colocation_12.98;data_11.1;landmark media enterprises_10.69;blast_9.99;valve_9.88;center_8.05;own_7.75;indianapolis_7.49;columbus_7.38;cleveland_6.55;pittsburgh_6.49;compliant_6.01
 bn:02522151n;StOrk;stork_11.93;shane gibson_11.81;thomas lang_11.4;kelly lemieux_5.9;avant-garde metal_5.03;muso_4.97;eloy_4.4;vk_4.36;bass_4.35;palacios_4.13;2010-present_4.13;blood clot_4.01;2013-present_3.93;korn_3.72
@@ -11223,7 +11223,7 @@ bn:03023137n;Corniche;corniche_371.71;road_134.88;maadi_87.86;beirut_84.51;musca
 bn:03026693n;Biomolecule;protein_712.2;cell_512.62;molecule_450.08;dna_408.55;rna_203.0;organism_202.67;structure_201.63;amino acid_173.06;oxygen_150.12;bacterium_148.78;enzyme_117.38;monosaccharide_116.39;nucleic acid_114.73;heparin_112.96
 bn:03026791n;County;county_2047.52;borough_348.26;local government_296.56;district_277.68;municipality_267.24;city_211.5;shire_208.14;divide_133.65;administrative_112.28;town_108.27;council_100.72;county council_93.48;parish_80.39;province_73.09
 bn:03027716n;Wince;wince_106.2;stakes_69.25;fallon_61.52;cecil_60.14;juddmonte_49.75;winner_42.84;khalid_42.14;frankel_41.98;filly_39.91;race_34.72;win_32.9;furlong_27.13;jockey_25.2;guinea_21.96
-bn:03032560n;Homelife;homelife_6.22;1942_4.72;bollywood_3.93;;;;;;;;;;;
+bn:03032560n;Homelife;homelife_6.22;1942_4.72;bollywood_3.93
 bn:03035162n;Dully;dully_68.23;municipality_43.19;till_30.9;text_24.55;bar_24.1;start_20.26;population_19.78;merge_15.5;people_13.48;household_11.65;sector_11.37;total_11.23;vaud_9.39;rolle_9.34
 bn:03037798n;Mar;mar_113.09;syriac_106.31;patriarch_100.49;syro-malankara_82.61;malankara_79.98;church_68.3;catholic church_67.4;mor_65.07;aphrem_63.88;bishop_62.43;eparchy_55.25;syro-malabar_37.93;archbishop_36.39;thiruvananthapuram_35.38
 bn:03038077n;Trying;biddle_84.96;truman_10.79;roosevelt_9.18;brazda_9.03;production_6.87;nuremberg trials_6.69;try_6.59;best_5.8;nominate_5.52;national federation for constitutional liberties_5.27;franklin d. roosevelt_5.23;joseph buffington_5.21;kenneth royall_5.21;american league for peace and democracy_5.13
@@ -12185,7 +12185,7 @@ bn:03639619n;Outlive;titan_107.01;argus_45.59;mechatronics_43.46;human_34.03;uni
 bn:03640235n;GRAPE;qfix_42.29;graphical_19.22;grape_16.53;environment_9.34;software_7.49;controller_7.38;kit_7.04;robot_6.91;visualization_6.12;program_6.03;avrdude_5.95;programming_5.85;mathematical visualization_5.74;robocup junior_5.5
 bn:03640309n;DIRECT;ares_513.68;nasa_292.37;srb_213.7;stage_195.37;launch_189.44;rocket_184.53;engine_160.15;payload_157.52;space shuttle_151.91;spacecraft_142.96;mission_123.85;sls_119.2;vehicle_117.03;orion_115.51
 bn:03641983n;Overcharge;overcharge_30.76;market price_14.86;price_14.4;charge_10.52;benchmark_9.33;observed_9.19;ripoff_8.99;bounds_8.15;collusion_7.15;lerner index_5.92;actually_5.36;but-for_5.06;profiteering_4.75;market power_4.75
-bn:03643178n;Paid;refer_7.04;(1930 film)_6.99;(2006 film)_6.37;personality and individual differences_6.21;pay_4.85;joan crawford_4.61;past tense_4.44;film_3.44;payment_2.93;dutch_2.52;journal_2.46;star_2.01;;
+bn:03643178n;Paid;refer_7.04;(1930 film)_6.99;(2006 film)_6.37;personality and individual differences_6.21;pay_4.85;joan crawford_4.61;past tense_4.44;film_3.44;payment_2.93;dutch_2.52;journal_2.46;star_2.01
 bn:03643193n;Bioavailability;drug_1809.4;bioavailability_499.46;dose_450.79;effect_239.28;methadone_231.65;patient_225.91;modafinil_192.24;oral_172.15;ketamine_168.26;concentration_167.6;heroin_165.47;treatment_150.71;chloramphenicol_142.44;absorption_141.39
 bn:03643889n;Deindustrialization;unemployment_359.68;economy_237.15;industrial_230.74;economic_229.24;deindustrialization_221.83;city_202.61;industry_195.42;poverty_169.26;britain_156.69;employment_126.52;manufacturing_124.01;industrial revolution_121.99;gentrification_120.43;detroit_120.1
 bn:03644148n;Short-handed;goal_894.3;penalty_854.76;game_792.47;nhl_756.35;player_720.16;team_714.53;puck_713.01;score_470.65;canuck_460.02;bure_440.52;play_411.02;hockey_321.31;goaltender_296.17;season_286.87
@@ -12514,7 +12514,7 @@ bn:03889735n;Man-Child;hancock_320.09;album_88.24;jazz_82.64;herbie_64.61;headhu
 bn:03890595n;CURIE;uri_170.87;wiki_123.85;wikis_86.42;rdfa_67.7;url_59.12;syntax_56.41;curie_49.45;namespace_48.67;resource_45.79;xml_45.4;document_41.05;urls_36.34;w3c_34.08;page_33.86
 bn:03892081n;Clicker;clicker_136.19;animal_104.83;training_57.58;behavior_57.49;trainer_30.47;click_29.15;animal trainer_26.84;dog_25.3;use_20.66;train_17.67;reinforcement_17.27;toy_15.08;method_15.06;operant conditioning_14.59
 bn:03892097n;Mirrored;battles_32.53;atlas_19.62;ian williams_13.93;mirrored_13.32;warp_13.24;braxton_12.64;stanier_11.91;warp records_11.18;tyondai_10.69;dave konopka_10.6;album_10.58;wordless_10.35;tyondai braxton_9.85;track_9.65
-bn:03894552n;Outdoors;see_2.66;;;;;;;;;;;;;
+bn:03894552n;Outdoors;see_2.66
 bn:03894584n;Forwarder;log_90.4;lumberjack_87.73;john deere_83.94;harvester_81.42;tree_59.49;forwarder_59.04;timberjack_48.15;logging_45.7;deere_36.47;forest_35.29;fel_34.42;tractor_34.38;forestry_33.38;logger_27.04
 bn:03894934n;Thinning;forest_212.58;tree_188.37;plantation_123.75;forestry_123.11;sugar_105.02;thin_77.18;factory_57.83;u-i_57.76;regeneration_54.2;sugar beet_53.1;harvester_50.12;thinning_49.88;utah-idaho_47.64;timber_46.74
 bn:03896671n;Embryonic;lips_142.46;embryonic_123.36;flaming_120.63;cell_104.55;stem cell_90.13;band_78.13;mgmt_73.39;coyne_54.34;album_51.46;es_49.67;scurlock_44.67;tveitan_43.3;embryo_39.48;release_31.25
@@ -12568,7 +12568,7 @@ bn:14037830n;Download;download_358.95;file_239.52;user_206.35;downloading_169.98
 bn:14041715n;Determination;determination_88.7;task_80.66;industriousness_51.52;effort_46.95;individual_46.44;emotion_35.8;goal_28.91;appraisal_27.71;participant_27.18;persistence_24.48;positive_23.67;reward_22.11;eisenberger_20.74;theory_20.69
 bn:14043009n;Cognizant;cognizant_220.45;india_125.32;company_109.4;tcs_108.41;bangalore_76.68;chennai_69.34;hyderabad_61.9;hitec_61.51;coimbatore_51.93;molina_51.71;software_48.78;tamil nadu_43.15;hackathons_42.27;infopark_41.33
 bn:14044808n;Uniform;wear_1907.91;uniform_1647.0;gown_433.19;dress_414.13;aiguillette_171.0;school_170.92;clothing_161.0;epaulette_146.44;tunic_137.91;collar_137.27;jacket_131.16;red_127.85;black_126.06;trouser_123.83
-bn:14047431n;Durable;stationery_4.74;durable_4.32;product_2.66;sell_2.46;german_2.43;company_2.11;;;;;;;;
+bn:14047431n;Durable;stationery_4.74;durable_4.32;product_2.66;sell_2.46;german_2.43;company_2.11
 bn:14056035n;Self-portrait;painting_1370.86;self-portrait_1128.24;jpg_1048.81;portrait_814.31;image_648.01;rembrandt_455.86;artist_427.8;painter_382.08;paint_356.82;art_344.93;file_300.96;abstract expressionism_250.0;pissarro_202.25;schiele_191.73
 bn:14058049n;Pro-choice;abortion_1231.79;pro-choice_458.33;pro-life_403.35;woman_166.0;fetus_159.68;sba_143.27;naral_113.01;reproductive_102.42;ffl_96.48;sebelius_96.39;filice_91.14;catholic_86.02;catholics_80.25;kmiec_71.96
 bn:14068814n;Perfumer;perfume_452.55;perfumer_357.3;chanel_328.84;fragrance_292.98;odor_190.5;scent_170.14;grenouille_158.13;perfumery_112.15;smell_78.59;parfums_57.77;beaux_53.12;fanfan_52.65;flavorist_50.21;guerlain_49.56
@@ -12651,7 +12651,7 @@ bn:14507597n;Bodyguard;bodyguard_630.43;security_290.88;bouncer_153.71;protectio
 bn:14511924n;Bookish;goodreads_150.9;shelfari_71.22;book_65.52;booklikes_64.66;user_61.09;librarything_43.88;anobii_36.63;site_23.73;bookarmy_20.25;amazon_20.0;bookish_18.22;douban_17.92;author_16.77;website_16.61
 bn:14515766n;Sanctuary;church_829.22;sanctuary_735.67;altar_468.73;iconostasis_81.93;congregation_72.71;chancel_64.37;nave_63.8;asylum_59.06;chinnar_57.24;building_54.71;build_43.06;pew_40.85;holy_40.04;window_39.58
 bn:14518029n;Deem;american_11.4;surname_8.23;james monroe deems_6.68;barrett deems_6.2;deem_5.9;deems_5.37;notable_4.15;biochemist_3.91;clergyman_3.33;cyclist_3.05;people_2.92;educator_2.86;wrestling_2.71;photographer_2.68
-bn:14519502n;Overpopulated;human overpopulation_6.48;overpopulated_5.56;documentary_3.1;bbc_3.09;;;;;;;;;;
+bn:14519502n;Overpopulated;human overpopulation_6.48;overpopulated_5.56;documentary_3.1;bbc_3.09
 bn:14520986n;Mainsail;sail_1482.58;mast_820.01;mainsail_579.4;boat_574.4;rig_472.98;jib_472.25;sailing_272.13;sloop_256.64;wind_222.3;schooner_217.17;spinnaker_195.34;vessel_192.85;hull_192.41;ketch_175.26
 bn:14522806n;GeneRally;car_74.36;circuit_67.02;racer_55.93;login_55.66;game_46.13;generally_43.04;track_42.06;tarmac_26.88;speedway_22.83;hotlap_20.38;driver_18.88;race_18.32;wilkesboro_18.08;hannu_17.87
 bn:14524760n;Clitoridectomy;clitoris_629.89;fgm_355.34;clitoral_288.71;circumcision_199.01;genital_180.66;glans_149.34;woman_144.96;penis_129.85;removal_128.59;orgasm_108.08;mutilation_106.72;female_104.86;labium_91.91;clitoridectomy_89.85
@@ -12919,8 +12919,8 @@ bn:16244848n;Sleight;sleight_9.82;slight_6.51;aaron slight_6.02;slite_5.47;surna
 bn:16250600n;Emotionality;disgust_349.86;emotion_164.8;ei_150.32;anxiety_76.5;emotional_73.49;test_54.01;al-rodhan_46.35;response_40.61;intelligence_37.97;physiological_37.93;theory_34.64;insula_33.73;facial expression_31.52;moral_31.41
 bn:16256534n;Terror;terrorism_222.41;terror_114.08;vvn_57.34;thriller_56.37;violence_53.83;definition_44.87;genocide_41.56;political_36.88;killing_35.03;regime_32.33;terrorist_32.02;horror_29.51;slasher_28.95;state_27.31
 bn:16259936n;Jacquard;etro_36.61;collection_13.41;jacquard_9.13;gimmo_6.17;jacquard weaving_6.02;albert jacquard_5.79;joseph marie jacquard_5.36;fabric_5.29;textile_5.25;jaccard_4.78;fragrances_4.73;gerolamo_4.71;jacquard loom_4.7;fashion show_4.63
-bn:16260766n;HolD;dna polymerase iii_6.57;e. coli_4.56;subunit_4.31;psi_4.19;bacterium_3.63;encode_3.46;gene_3.07;hold_2.0;;;;;;
-bn:16260806n;HolE;dna polymerase iii_6.57;e. coli_4.56;theta_4.42;subunit_4.31;bacterium_3.63;encode_3.46;hole_3.24;gene_3.07;;;;;;
+bn:16260766n;HolD;dna polymerase iii_6.57;e. coli_4.56;subunit_4.31;psi_4.19;bacterium_3.63;encode_3.46;gene_3.07;hold_2.0
+bn:16260806n;HolE;dna polymerase iii_6.57;e. coli_4.56;theta_4.42;subunit_4.31;bacterium_3.63;encode_3.46;hole_3.24;gene_3.07
 bn:16269527n;HORSE;poker_860.8;event_732.6;them_514.44;buy-in_510.06;wsop_499.09;hand_353.05;player_322.24;3-day_304.32;card_286.86;payout_273.97;no-limit_254.96;pool_254.94;number_253.67;tournament_230.09
 bn:16283527n;Chicle;gum_283.59;belize_255.18;nahuatl_252.27;chicle_202.93;spanish_161.84;latex_148.38;chew_136.12;guatemala_105.34;chiapas_94.96;rubber_93.64;maya_89.83;mexico_68.08;mean_62.16;indigenous_62.06
 bn:16285008n;Strongpoint;strongpoint_9.84;defensive fighting position_6.12;winter line_5.62;anchor_5.45;lines of communication_5.42;monte cassino_4.72;a-3_4.57;thermopylae_4.48;high ground_3.62;overrun_3.39;greeks_3.2;preferred_2.9;terrain_2.88;persian_2.72
@@ -12942,7 +12942,7 @@ bn:16400209n;Legatee;testator_78.47;legatee_46.61;beneficiary_30.38;revoke_29.34
 bn:16410894n;DamNation;chouinard_27.23;climb_13.88;rummel_13.01;ascent_11.43;tom frost_10.56;patagonia_10.42;stoecker_9.82;travis_8.55;piton_8.34;advocacy_7.77;damnation_7.52;yosemite_6.77;ben_6.36;ice_6.08
 bn:16412330n;Bloke;bloke_182.88;irwin_154.2;shed_110.34;slang_63.81;wilfred_47.9;australian_35.31;australia_22.05;crocodile_20.05;slang term_16.97;aussie_16.08;word_13.32;zwar_11.37;steve irwin_10.17;steve_9.92
 bn:16413751n;Smelting;copper_1880.29;iron_1252.83;metal_983.44;ore_941.34;smelt_868.46;furnace_688.07;slag_676.22;alloy_565.37;process_425.65;tin_337.18;blast furnace_307.8;mine_274.61;isasmelt_273.4;mining_268.96
-bn:16414562n;Exactness;exact category_7.16;exact functor_6.79;exact sequence_6.19;accuracy and precision_6.16;exactness_5.58;mathematics_3.22;refer_2.44;;;;;;;
+bn:16414562n;Exactness;exact category_7.16;exact functor_6.79;exact sequence_6.19;accuracy and precision_6.16;exactness_5.58;mathematics_3.22;refer_2.44
 bn:16418481n;Consul;consul_1710.78;bc_416.59;praetor_170.14;consular_144.9;tribune_111.1;roman_109.57;consulate_98.09;emperor_90.12;censor_81.4;magistrate_81.01;plebeian_77.53;aedile_76.62;proconsul_72.4;dictator_68.75
 bn:16423304n;Departmental;australian theatre festival_6.79;abc_5.67;australian_4.54;mervyn_4.3;departmental_3.84;rutherford_3.72;disappearance_3.34;police station_3.32;series_3.21;inquiry_3.04;play_2.68;safe_2.67;internal_2.56;poor_2.34
 bn:16474636n;Apologia;rhetoric_109.4;socrates_83.32;aristotle_80.53;apologia_68.61;word_47.39;rhetorical_44.6;chapter_42.94;speech_31.44;deliberative_26.56;bk_24.37;enthymeme_21.84;repetition_21.43;plato_20.46;meletus_17.55

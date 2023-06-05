@@ -32,9 +32,9 @@ def extract_verb_parameters(tokenized_dataset, verb):
         for token in sentence:
             if token.head.lemma_.lower() == verb:
                 if token.dep_ == "nsubj":
-                    subject = token.text
+                    subject = token.dataset_text
                 elif token.dep_ == "dobj":
-                    complement_object = token.text
+                    complement_object = token.dataset_text
 
         if subject!=None and subject!= '' and complement_object!=None and complement_object!= '':
             verb_parameters.append((subject,complement_object,sentence))
