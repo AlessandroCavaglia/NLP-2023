@@ -157,7 +157,7 @@ function manageMessage(trigger = 0,value) {
                 },
                 body:'{"speechRecognitionHypotesis":"'+value+'"}',
             }).then(response => response.json())
-                .then(response => chat.innerHTML = chat.innerHTML + '<div class="message stark"><span>' + JSON.stringify(response["Message"]) + '</span><div class="timeMessage">' + getCurrentTime() + '</div><i onclick="speak_message(this)" class="play_text uil uil-play"></i></div>')
+                .then(response => chat.innerHTML = chat.innerHTML + '<div class="message stark"><span>' + response["Message"] + '</span><div class="timeMessage">' + getCurrentTime() + '</div><i onclick="speak_message(this)" class="play_text uil uil-play"></i></div>')
                 .then(response => chat.scrollTop = chat.scrollHeight - chat.clientHeight)
 
         }

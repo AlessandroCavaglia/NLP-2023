@@ -85,7 +85,7 @@ class DialogueManager:
             Question(["where is the jedi temple located?"], ["be", "locate", "reside"], [['coruscant']],
                      ["our temple is located on Coruscant let's keep going to the next question: ",
                       "our temple and our council resides in Coruscant, let's move on"]))
-        self.questionsToAsk.append(Question(["As jedis we work to bring the force to wich state?"], ["be", "bring"],
+        self.questionsToAsk.append(Question(["As jedis we work to bring the force to which state?"], ["be", "bring"],
                                             [['balance'], ['balanced'], ['state of balance']],
                                             [
                                                 "as jedis we work to bring balance to the force, let's keep going to "
@@ -101,33 +101,33 @@ class DialogueManager:
                                                 "the three main pillars are knowledge,defense,armony, let's keep "
                                                 "going to the next question: "]))
 
-        self.questionsToAsk.append(Question(["What type of colour of the lightsaber represents the Jedi Consular?","Wich colour of lightsaber should a member of the jedi concil hold?"], ["be","represent","hold"],
+        self.questionsToAsk.append(Question(["What type of colour of the lightsaber represents the Jedi Consular?","Which colour of lightsaber should a member of the jedi council hold?"], ["be","represent","hold"],
                                             [["green"]],
                                             [
                                                 "The lightsaber should be green young student, be obedient when you see one of that colour! let's move on",
-                                                "The answer was green, let's keep going!"]))
+                                                "The answer was green. let's keep going! "]))
 
-        self.questionsToAsk.append(Question(["Wich ancient Jedi artifact holds the knowledge of past jedi masters?",
+        self.questionsToAsk.append(Question(["Which ancient Jedi artifact holds the knowledge of past jedi masters?",
                                              "What's the name of the artifact that holds the knowledge of the most important jedi masters of the past?"],
                                             ["be"],
                                             [["jedi holocron"],["holocron"]],
                                             [
-                                                "You must know the history to be prepared for the future, the answer was the famous Jedi Holocron, let's move on",
-                                                "This is very important young student,the answer was the Jedi Holocron, let's move to the next question and see if you have studied"]))
+                                                "You must know the history to be prepared for the future, the answer was the famous Jedi Holocron, let's move on ",
+                                                "This is very important young student,the answer was the Jedi Holocron, let's move to the next question and see if you have studied "]))
         self.questionsToAsk.append(Question(["Which legendary Jedi and mandalorian wielded the single-bladed lightsaber known as the Darksaber?",
                                              "Who was the famous jedi mandalorian that was known for wielding the Darksaber?"],
                                             ["be"],
                                             [["pre vizsla"]],
                                             [
-                                                "His name was a legend, he was Pre Vizsla, i can't belive you don't know him, let's move on",
-                                                "He was Pre Vizsla, the only jedi mandalorian, let's keep going"]))
-        self.questionsToAsk.append(Question(["Which Jedi master was the first to discover the secret to maintaing consciousness after death and manifest to others?",
+                                                "His name was a legend, he was Pre Vizsla, i can't belive you don't know him, let's move on ",
+                                                "He was Pre Vizsla, the only jedi mandalorian, let's keep going "]))
+        self.questionsToAsk.append(Question(["Which Jedi master was the first to discover the secret to maintaining  consciousness after death and manifest to others?",
                                              "Which Jedi master was the first to manifest as a force ghost?"],
                                             ["be"],
                                             [["qui-gon jinn"],["qui-gon"],["qui gon"],["qui gon jinn"]],
                                             [
-                                                "His name was Qui-Gon Jinn, he was my master, let's move to the next question"
-                                                "His name was Qui-Gon Jinn, i was his padawan, let's move on"]))
+                                                "His name was Qui-Gon Jinn, he was my master, let's move to the next question "
+                                                "His name was Qui-Gon Jinn, i was his padawan, let's move on "]))
 
         self.welcomAntePhrases.append(Phrase(
             "Welcome young student! Thrilled to become a jedi? This if your first question to check if you have what is needed: ",
@@ -140,10 +140,10 @@ class DialogueManager:
             0))
         self.failedTestPhrases.append(Phrase(
             "Sorry young student, but you haven't studied enough for this test! Try again in a while and you will "
-            "succsed.",
+            "succseed.",
             1))
         self.failedTestPhrases.append(Phrase(
-            "I'm really sorry, student but you haven't passed the exam, if you need help to study you can ask me any "
+            "I'm really sorry student but you haven't passed the exam, if you need help to study you can ask me any "
             "time.",
             2))
 
@@ -152,7 +152,7 @@ class DialogueManager:
             "i feel disturbance in you soul.",
             0))
         self.passedTestPhrases.append(Phrase(
-            "Congratulations you have studied, you have passed the test and can officialy become a padawan! good luck "
+            "Congratulations you have studied, you have passed the test and can officially  become a padawan! Good luck "
             "on becoming a Jedi.",
             1))
         self.passedTestPhrases.append(Phrase(
@@ -161,9 +161,9 @@ class DialogueManager:
             2))
 
         self.correctAntePhrases.append(
-            Phrase("Correct but this question was simple. let's keep going, next question: ", 0))
-        self.correctAntePhrases.append(Phrase("It's correct. let's keep going, next question: ", 1))
-        self.correctAntePhrases.append(Phrase("Good answer! let's keep going, next question: ", 2))
+            Phrase("Correct but this question was simple. Let's keep going, next question: ", 0))
+        self.correctAntePhrases.append(Phrase("It's correct. Let's keep going, next question: ", 1))
+        self.correctAntePhrases.append(Phrase("Good answer! Let's keep going, next question: ", 2))
 
         self.incorrectAntePhrases.append(Phrase("That's not right! you must study more!! ", 0))
         self.incorrectAntePhrases.append(Phrase("That's not right! ", 1))
@@ -234,6 +234,11 @@ class DialogueManager:
             for sol in self.askedQuestion.correctAnswers:
                 if (sol in answers.complements):
                     trueAnswer = "TRUE"
+                for sol_elem in sol:
+                    for complement in answers.complements:
+                        for compl_elem in complement:
+                            if(sol_elem in compl_elem):
+                                trueAnswer= "TRUE"
             '''for phrase in answers.complements:
                 for elem in phrase:
                     if (elem.lower() in self.askedQuestion.correctAnswers):
