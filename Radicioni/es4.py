@@ -22,8 +22,17 @@ def embed_sentence(document,glove):
 
     # Embed each word and calculate the average embedding
     embeddings = [get_embedding(word, glove) for word in words]
-    print(embeddings)
+    return compute_centroid(embeddings)
 
+
+def compute_centroid(embeddings):
+    # Verifica che l'array di embedding non sia vuoto
+    if len(embeddings) == 0:
+        return None
+    # Calcola il centroide come media degli embedding lungo l'asse 0
+    centroid = np.mean(embeddings, axis=0)
+
+    return centroid
 
 def load_datasets(parent_folder_name):
     dataset=[]
@@ -47,8 +56,14 @@ if __name__ == "__main__":
     dataset=load_datasets("data-es4/data/20_NGs_400")
     random.seed(22)
     random.shuffle(dataset)
+
+    #print(dataset)
+    print(len(dataset))
     glove_file = "glove.6B/glove.6B.300d.txt"
     glove = KeyedVectors.load_word2vec_format(glove_file, no_header=True)
+    print("finito")
     dataset=embed_dataset(dataset,glove)
+    print(dataset)
+
 
 
