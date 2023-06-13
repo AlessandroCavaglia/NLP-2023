@@ -105,7 +105,6 @@ if __name__ == "__main__":
     COMPRESSION_RATE=20
     num_phrases = int(count_sentences(dataset_text) * (1 - COMPRESSION_RATE / 100))
     summary = summarize_text(dataset_text,num_phrases,nasari)
-    #print(summary)
 
     generated_summary = summary
 

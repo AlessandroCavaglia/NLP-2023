@@ -115,7 +115,6 @@ if __name__ == "__main__":
     for i in range(NUM_TESTS):
         n_tests = 0
         n_hits = 0
-
         n_state_of_art_hits = 0
         sample = random.sample(dataset, TEST_SIZE)
         for sentence in sample:

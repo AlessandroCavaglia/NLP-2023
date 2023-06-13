@@ -1,7 +1,6 @@
 import random
 
 import nltk
-from nltk import bigrams,trigrams, FreqDist
 import csv
 
 def read_csv(filename):
