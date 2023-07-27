@@ -1,4 +1,4 @@
-# Natural Language Tecnhiques 2023 COURSE 
+# NLP 2023 COURSE (Natural Language Processing)
 
 This Github project contains all the work was done  for the project for the course of Natural Language Tecnhiques
 that i have followed in 2023 in the IT departement of Turin.
